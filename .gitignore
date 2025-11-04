@@ -21,4 +21,7 @@
 
 
 ## The pdf report
-*.pdf
+# *.pdf
+
+##figures
+*.png
