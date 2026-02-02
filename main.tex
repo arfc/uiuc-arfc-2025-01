@@ -180,8 +180,8 @@ begining, etc.  }
 
     GC-859 data also provide insights into fuel characteristics at discharge. Over time, average burnup has increased from
     early values below 20~GWd/MT in the 1970s to approximately 50 GWd/MT today. Correspondingly, initial enrichment has
-    risen from about 2\% U-235\todo{The writing checklist is clear, this should 
-    be $^{235}U$, not U-235. Please check whole document for these instances 
+    risen from about 2\% $^{235}U$\todo{The writing checklist is clear, this should 
+    be $^{235}U$, not $^{235}U$. Please check whole document for these instances 
     and fix them.} in early fuel designs to nearly 4.5\% in modern \gls{PWR} and \gls{BWR} assemblies. These changes reflect
     improvements in core design, regulatory allowances, and utility strategies aimed at extending fuel cycle lengths and
     improving economic performance.\\
@@ -198,7 +198,7 @@ begining, etc.  }
         \begin{center}
             \includegraphics[width=\textwidth]{figures/assemblies.png}
         \end{center}
-            \caption[Burn-up (GWd/MTHM) \& Initial Enrichment (\% U-235) by Number 
+            \caption[Burn-up (GWd/MTHM) \& Initial Enrichment (\% $^{235}U$) by Number 
             of Assemblies of \gls{SNF} Through December 2022]{full sentence 
             here. \todo[inline]{Figure 
             captions should be complete sentences. CITE THE SOURCE}}
@@ -218,7 +218,7 @@ begining, etc.  }
         \begin{center}
             \includegraphics[width=\textwidth]{figures/burnup_enrichment.png}
         \end{center}
-        \caption{Average Annual Burn up (GWd/MT) and Enrichment (U-235\%)}
+        \caption{Average Annual Burn up (GWd/MT) and Enrichment ($^{235}U$\%)}
         \label{fig5}
     \end{figure}
 
@@ -239,8 +239,8 @@ begining, etc.  }
     UNF-ST\&DARDS\todo{please add these acronyms to acros.tex.}.\\
 
     As seen in Table~\ref{tab4} and Figure~\ref{fig6} the decay heat profile for \gls{PWR} fuel discharged at 60~GWd/MT. At early cooling times, decay heat is
-    dominated by fission products such as Cs-137 and Sr-90. At longer cooling times, actinides, particularly Pu-238, Pu-241,
-    and Am-241, become the primary contributors. Higher burnup fuel retains more long-term decay heat, which has implications
+    dominated by fission products such as $^{137}Cs$ and $^{90}Sr$. At longer cooling times, actinides, particularly $^{238}Pu$, $^{241}Pu$,
+    and $^{241}Am$, become the primary contributors. Higher burnup fuel retains more long-term decay heat, which has implications
     for storage, transport, and disposal.
 
     \begin{table}[H]
@@ -281,7 +281,7 @@ begining, etc.  }
     Unlike the relatively standardized commercial \gls{LWR} inventory, \gls{DOE}'s \gls{SNF} inventory is highly heterogeneous.
     It includes fuel from graphite moderated reactors, sodium cooled reactors, high flux isotope production reactors,
     heavy water reactors, TRIGA research reactors, breeder reactors, and early prototype power reactors. Fuel enrichments
-    span a wide range from depleted uranium for production reactors to highly enriched uranium exceeding 93\% U-235 for
+    span a wide range from depleted uranium for production reactors to highly enriched uranium exceeding 93\% $^{235}U$ for
     test and training reactors. Many reactors used bespoke fuel element geometries and materials, resulting in over 229,000
     individual fuel elements or pieces, covering several hundred unique fuel types. This diversity is central to \gls{DOE}'s ongoing
     challenges in characterization, consolidation, and long term disposal planning.\\
@@ -640,14 +640,14 @@ begining, etc.  }
     The isotopic feed streams used for \gls{XDS} transmutation in \textsc{Cyclus} are derived directly from the STANDARDS 5.0.1 dataset at representative discharge burnups
     (40–60 GWd/MTU for \gls{PWR} fuel and 30–50 GWd/MTU for \gls{BWR} fuel), with decay corrections applied to match the assumed spent fuel cooling time.
     For scenarios focused strictly on minor actinide (MA) reduction, the feed consists of the isotopes that dominate long term radiotoxicity, decay heat,
-    and neutron absorption in the commercial \gls{SNF} inventory: uranium (U-235, U-238), plutonium (Pu-238 through Pu-242), neptunium-237,
-    americium (Am-241, Am-242m, Am-243), and curium (Cm-244 through Cm-247). Plutonium isotopes are included to maintain the subcritical multiplication
+    and neutron absorption in the commercial \gls{SNF} inventory: uranium ($^{235}U$, $^{238}U$), plutonium ($^{238}Pu$ through $^{242}Pu$), neptunium-237,
+    americium ($^{241}Am$, $^{242m}Am$, $^{243}Am$), and curium ($^{244}Cm$ through $^{247}Cm$). Plutonium isotopes are included to maintain the subcritical multiplication
     factor of the \gls{XDS}, while the MA vector represents the primary target for transmutation. In some \gls{XDS}s designs, technetium-99 and iodine-129 are
     also incorporated in the feed because of their strong spectral-shaping effects.~\cite{gohar_ads_2021}\\
 
     A second, extended feed stream is used for \gls{XDS} concepts that aim to simultaneously transmute long lived fission products (LLFPs) alongside actinides.
     In this scenario the MA composition described above is supplemented with selected LLFP isotopes that significantly influence long term radiotoxicity or
-    neutron economy, including Tc-99, I-129, Cs-135, Se-79, Sn-126, Zr-93, Pd-107, Kr-85, and Sm-151.
+    neutron economy, including $^{99}Tc$, $^{129}I$, $^{135}Cs$, $^{79}Se$, $^{126}Sn$, $^{93}Zr$, $^{107}Pd$, $^{85}Kr$, and $^{151}Sm$.
     These LLFPs are incorporated only when the system design explicitly targets LLFP destruction;
     otherwise they appear solely as fission products generated during irradiation.
     Together, the MA-only and MA+LLFP feed definitions allow \textsc{Cyclus} to represent a spectrum of \gls{XDS} concepts ranging from conservative
@@ -656,10 +656,10 @@ begining, etc.  }
     including the redox potential and solubility of dissolved actinides or surrogate fluorides in the carrier salt.~\cite{herrera-martinez_transmutation_2007}\\
 
     The output stream generated by the \gls{XDS} facility in \textsc{Cyclus} represents the “spent fuel” of the \gls{ADS} irradiation stage and captures the isotopic changes
-    that occur during transmutation. Following irradiation, the material contains reduced quantities of minor actinides, particularly Am-241, Am-243, Np-237,
+    that occur during transmutation. Following irradiation, the material contains reduced quantities of minor actinides, particularly $^{241}Am$, $^{243}Am$, $^{237}Np$,
     and multiple curium isotopes, which reflects the primary transmutation objective of the system.
-    The plutonium vector evolves through a combination of fission and neutron capture reactions, typically showing reduced Pu-239 and Pu-241, and corresponding growth in Pu-240 and Pu-242.
-    When LLFP transmutation is not activated in the scenario, long lived isotopes such as Tc-99, I-129, Sn-126, and Pd-107 remain in the output inventory.
+    The plutonium vector evolves through a combination of fission and neutron capture reactions, typically showing reduced $^{239}Pu$ and $^{241}Pu$, and corresponding growth in $^{240}Pu$ and $^{242}Pu$.
+    When LLFP transmutation is not activated in the scenario, long lived isotopes such as $^{99}Tc$, $^{129}I$, $^{126}Sn$, and $^{107}Pd$ remain in the output inventory.
     Overall, the resulting composition demonstrates substantial actinide mass reduction, increased fission product content, and a modified transuranic vector,
     providing a physically realistic representation of \gls{XDS} discharge material for further processing, storage, or reinsertion into subsequent fuel cycle stages.~\cite{noauthor_proceedings_nodate}
 
