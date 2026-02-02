@@ -1,31 +1,31 @@
 \section{Introduction}
-    This summary consolidates U.S. \gls{snf} and \gls{hlw}
+    This summary consolidates U.S. \gls{SNF} and \gls{HLW}
     inventory information from federal databases \todo{cite a federal 
     database here}
     and national reports \cite{carter_spent_2023}. This summary serves to inform isotopic 
     composition analysis and strategic scenario development for modeling 
     fuel cycles enabled by accelerator driven and fusion-source driven 
-    transmutation systems (XDS)\footnote{This report will refer to all \gls{ads} and 
-    \gls{fds} as \gls{xds}.}.  It provides (1) current commercial \gls{snf} inventory, 
-    (2) DOE managed \gls{snf} from research and defense programs, (3) research 
-    reactor \gls{snf}, and (4) reprocessing waste inventories.
+    transmutation systems (XDS)\footnote{This report will refer to all \glspl{ADS} and 
+    \glspl{FDS} as \gls{XDS}.}.  It provides (1) current commercial \gls{SNF} inventory, 
+    (2) \gls{DOE}-managed \gls{SNF} from research and defense programs, (3) research 
+    reactor \gls{SNF}, and (4) reprocessing waste inventories.
 
     This report will describe the current U.S. inventories at a high level, emphasizing 
     data to be incorporated into \textsc{Cyclus} \cite{huff_fundamental_2016} 
     facility archetypes and scenarios developed in support of the 
-    \gls{einstein} project.
+    \gls{EINSTEIN} project \cite{fang_einstein:_2025}.
 
 \section{Geospatial Information}
-    Transportation of feed material to XDS facilities and transportation of 
-    product material from the XDS facilities can be modeled using geographical 
+    Transportation of feed material to \gls{XDS} facilities and transportation of 
+    product material from the \gls{XDS} facilities can be modeled using geographical 
     data from the available datasets \todo{cite UDB} coupled with 
     the geospatial mapping capabilities in \textsc{Cyclus}. 
     Figure~\ref{fig1} shows the geographic distribution of sites storing 
-    \gls{snf} and reprocessing waste across the United States based on 
+    \gls{SNF} and reprocessing waste across the United States based on 
     data from \cite{carter_spent_2023}. 
     The map shows the locations of commercial nuclear power plants, 
-    \glspl{isfsi}, and DOE-managed facilities.
-    Notable concentrations of \gls{snf} storage sites are observed in the northeastern United States, the Midwest, the Southeast, and along the West Coast, reflecting the historical deployment of the nation's light water reactor fleet.
+    \glspl{ISFSI}, and \gls{DOE}-managed facilities.
+    Notable concentrations of \gls{SNF} storage sites are observed in the northeastern United States, the Midwest, the Southeast, and along the West Coast, reflecting the historical deployment of the nation's light water reactor fleet.
     This spatial distribution is an important consideration for future fuel consolidation strategies, transportation planning, and repository siting analyses.
 
     \begin{figure}[H]
@@ -41,79 +41,83 @@
     \begin{table}[H]
         \centering
         \includegraphics[width=\textwidth]{figures/intro_table.png}
-        \caption{U.S. \gls{snf} and Reprocessing Waste Inventory Summary as of December 31, 2022.}
+        \caption{U.S. \gls{SNF} and Reprocessing Waste Inventory Summary as of 
+            December 31, 2022.\todo[inline]{CITE THE SOURCE}}
         \label{tab1}
         \vspace{0.3em}
         \footnotesize
         \textit{Table notes:}
         \begin{itemize}
                 \item[\textsuperscript{a}] Values are rounded to the nearest 
-                        \gls{mthm}.
-            \item[\textsuperscript{b}] Commercial \gls{snf} includes permanently discharged PWR and BWR fuel through December 31, 2022, excluding fuel reprocessed at West Valley, removed from Three Mile Island Unit~2, or discharged from the Fort St.~Vrain reactor.
-            \item[\textsuperscript{c}] DOE \gls{snf} includes fuel from DOE research and production reactors, naval reactors, and the Fort St.~Vrain gas-cooled reactor.
+                        \gls{MTHM}.
+            \item[\textsuperscript{b}] Commercial \gls{SNF} includes permanently discharged \gls{PWR} and \gls{BWR} fuel through December 31, 2022, excluding fuel reprocessed at West Valley, removed from Three Mile Island Unit~2, or discharged from the Fort St.~Vrain reactor.
+            \item[\textsuperscript{c}] \gls{DOE} \gls{SNF} includes fuel from \gls{DOE} research and production reactors, naval reactors, and the Fort St.~Vrain gas-cooled reactor.
             \item[\textsuperscript{d}] Other sites include university research reactors, government research reactors, and commercial R\&D facilities.
-            \item[\textsuperscript{e}] Site counts exclude DOE-owned ISFSIs but include the Morris away-from-reactor pool; co-located plants are counted as single sites.
+            \item[\textsuperscript{e}] Site counts exclude \gls{DOE}-owned \glspl{ISFSI} but include the Morris away-from-reactor pool; co-located plants are counted as single sites.
             \item[\textsuperscript{f}] Excludes critical facilities and very-low-power AGN-201 university reactors that are not expected to generate discharged fuel.
-            \item[\textsuperscript{g}] Includes three DOE reprocessing waste sites and one commercial HLW storage site.
+            \item[\textsuperscript{g}] Includes three \gls{DOE} reprocessing 
+                    waste sites and one commercial \gls{HLW} storage site.
             \item[\textsuperscript{h}] Includes only vitrified waste canisters produced through December 31, 2022.
-            \item[\textsuperscript{i}] Includes all West Valley vitrified HLW canisters, including melter-drain and end-of-process canisters.
+            \item[\textsuperscript{i}] Includes all West Valley vitrified\gls{HLW} canisters, including melter-drain and end-of-process canisters.
         \end{itemize}
         \normalsize
     \end{table}
     
-    As summarized in Table~\ref{tab1}, at the end of 2022, the U.S. inventory of \gls{snf} and primary reprocessing waste was distributed across more than 100 sites in 39 states.
-    These include 73 commercial nuclear power reactor and Independent Spent Fuel Storage Installation (ISFSI) sites, 6 DOE facilities with \gls{snf} or research reactors,
-    and 28 research and development (R\&D) sites encompassing universities, government laboratories, and commercial research centers.
-    Four major locations manage high level waste (HLW) and vitrified reprocessing waste, including 3 DOE facilities and one commercial site at West Valley, NY.\\
+    As summarized in Table~\ref{tab1}, at the end of 2022, the U.S. inventory of \gls{SNF} and primary reprocessing waste was distributed across more than 100 sites in 39 states.
+    These include 73 commercial nuclear power reactor and \gls{ISFSI} sites, 6 \gls{DOE} facilities with \gls{SNF} or research reactors,
+    and 28 \gls{RD} sites encompassing universities, government laboratories, and commercial research centers.
+    Four major locations manage \gls{HLW} and vitrified reprocessing waste, including 3 \gls{DOE} facilities and one commercial site at West Valley, NY.\\
 
-    Commercial \gls{snf} inventories include permanently discharged PWR and BWR assemblies reported through 2022. Quantities exclude reprocessed fuel from the West Valley and Fort St. Vrain reactors.
-    DOE totals include \gls{snf} from research, naval, and production programs.
+    Commercial \gls{SNF} inventories include permanently discharged \gls{PWR} and \gls{BWR} assemblies reported through 2022. Quantities exclude reprocessed fuel from the West Valley and Fort St. Vrain reactors.
+    \gls{DOE} totals include \gls{SNF} from research, naval, and production programs.
     Other noncommercial sources include university and government research reactors.
-    Reprocessing waste totals reflect vitrified HLW canisters produced through 2022.
+    Reprocessing waste totals reflect vitrified\gls{HLW} canisters produced through 2022.
 
 \section{U.S. Commercial Spent Nuclear Fuel Inventory} 
 
 
  Commercial nuclear power reactors have operated in the United States since 1960, during which time a total of
- 131 civilian nuclear power reactors (NPRs) were constructed, excluding several experimental or non-power demonstration units.
+ 131 civilian \glspl{NPR} were constructed, excluding several experimental or non-power demonstration units.
  Nine of the early demonstration reactors, including Peach Bottom Unit 1, Shippingport, and Fermi 1, have been fully decommissioned,
- and the remaining \gls{snf} from these reactors is managed by the Department of Energy (DOE). The Fort St.
- Vrain high temperature gas cooled reactor, although also decommissioned, has its \gls{snf} under DOE custody at
- the Idaho National Laboratory (INL). Of the remaining fleet, 121 are light water reactors (LWRs).
+ and the remaining \gls{SNF} from these reactors is managed by the \gls{DOE}. The Fort St.
+ Vrain high temperature gas cooled reactor, although also decommissioned, has its \gls{SNF} under \gls{DOE} custody at
+ the \gls{INL}. Of the remaining fleet, 121 are \glspl{LWR}.
  Shoreham never entered commercial service, and Three Mile Island Unit 2 was permanently disabled in 1979,
- with both now under DOE management. As of the end of 2022, 92 reactors remain operational and 27 are permanently shut down.
- Nearly every plant hosts a co-located ISFSI, which becomes the primary
+ with both now under \gls{DOE} management. As of the end of 2022, 92 reactors remain operational and 27 are permanently shut down.
+ Nearly every plant hosts a co-located \gls{ISFSI}, which becomes the primary
  storage facility after plant decommissioning.\\
 
     To facilitate inventory analysis, reactor sites are assigned to four categories based on operational status and onsite
     storage configuration. Group A consists of sites where all reactors have been permanently shut down, while Group B
     contains sites with a mixture of operating and shutdown units. Group C includes sites where all reactor units remain
-    operational, and Group F consists of away from reactor ISFSI facilities such as the Morris, Illinois wet storage pool.
-    A numeric suffix is used to indicate whether \gls{snf} storage at the site is entirely dry (1), a mixture of wet and dry storage (2),
-    or entirely wet (3). For example, Yankee Rowe is classified as Group A1 because all \gls{snf} at the site is stored in dry casks,
+    operational, and Group F consists of away from reactor \gls{ISFSI} facilities such as the Morris, Illinois wet storage pool.
+    A numeric suffix is used to indicate whether \gls{SNF} storage at the site is entirely dry (1), a mixture of wet and dry storage (2),
+    or entirely wet (3). For example, Yankee Rowe is classified as Group A1 because all \gls{SNF} at the site is stored in dry casks,
     while Surry is classified as Group C2 because it contains both pool and dry storage systems. Diablo Canyon Units 1 and 2 are
     currently classified under Group C but are expected to transition to shutdown status before 2030.\\
 
-    Table~\ref{tab2} summarizes the distribution of commercial \gls{snf} by reactor category, illustrating the growth of Group A sites as more
+    Table~\ref{tab2} summarizes the distribution of commercial \gls{SNF} by reactor category, illustrating the growth of Group A sites as more
     reactors retire. This grouping framework underpins the spatial and temporal distribution of discharged fuel and the corresponding
     storage infrastructure needed across the United States.\\
 
-    Commercial \gls{snf} data originate primarily from the DOE's GC-859 Nuclear Fuel Data Survey, which provides assembly level
-    discharge information including assembly type, physical dimensions, enrichment, and burnup. As of December 2022,
-    approximately 91{,}000 MTU of commercial \gls{snf} had been discharged nationally. These discharge records reflect only the
+    Commercial \gls{SNF} data originate primarily from the \gls{DOE}'s GC-859 Nuclear Fuel Data Survey, which provides assembly level
+    discharge information including assembly type, physical dimensions, 
+    enrichment, and burnup\todo{CITE THIS}. As of December 2022,
+    approximately 91{,}000 MTU of commercial \gls{SNF} had been discharged nationally. These discharge records reflect only the
     initial removal from reactor cores and do not include subsequent transfers. Historically, small quantities of fuel were shipped
     to other facilities prior to the year 2000, including limited reprocessing at West Valley, New York, and transfers to the Morris,
-    Illinois away from reactor wet storage pool. Approximately 73 MTU of fuel was transferred to DOE facilities for research programs
-    involving rod consolidation, dry storage demonstration, and vitrification studies; 68 MTU of this material remains in DOE custody
-    today. \gls{snf} from Fort St. Vrain and Three Mile Island Unit 2 is also stored at INL. Since 2000, however, virtually all discharged
-    commercial \gls{snf} has remained onsite at the generating reactor facilities. In total, 73 commercial locations, including Morris,
-    currently store \gls{snf}. Notably, as of 2021, the national inventory stored in dry casks surpassed the inventory remaining in spent
+    Illinois away from reactor wet storage pool. Approximately 73 MTU of fuel was transferred to \gls{DOE} facilities for research programs
+    involving rod consolidation, dry storage demonstration, and vitrification studies; 68 MTU of this material remains in \gls{DOE} custody
+    today. \gls{SNF} from Fort St. Vrain and Three Mile Island Unit 2 is also stored at \gls{INL}. Since 2000, however, virtually all discharged
+    commercial \gls{SNF} has remained onsite at the generating reactor facilities. In total, 73 commercial locations, including Morris,
+    currently store \gls{SNF}. Notably, as of 2021, the national inventory stored in dry casks surpassed the inventory remaining in spent
     fuel pools, reflecting both aging reactor infrastructure and the expansion of dry storage systems across the fleet.
 
     \begin{table}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/sec2.1_table.png}
-    \caption{Spent Nuclear Fuel Inventory by Reactor Group/Subgroup (As of December 31, 2022)}
+    \caption{Spent Nuclear Fuel Inventory by Reactor Group/Subgroup (As of 
+            December 31, 2022)\todo[inline]{CITE THE SOURCE}}
     \label{tab2}
     \vspace{0.3em}
     \footnotesize
@@ -122,21 +126,31 @@
         \item[\textsuperscript{\textdagger}] Two B2 sites include one shutdown reactor and two operating reactors.
         \item[\textsuperscript{\textdagger\textdagger}] Excludes prototype, experimental, and disabled reactors (Fermi-1, Peach Bottom-1, and Three Mile Island Unit~2).
         \item[\textsuperscript{\textdaggerdbl\textdaggerdbl}] Nine Mile Point and James A.~FitzPatrick are treated as a single site due to proximity and shared site boundaries.
-        \item[\textsuperscript{\textdaggerdbl\textdaggerdbl\textdaggerdbl}] Hope Creek and Salem are treated as a single site due to proximity and a shared ISFSI.
+        \item[\textsuperscript{\textdaggerdbl\textdaggerdbl\textdaggerdbl}] Hope Creek and Salem are treated as a single site due to proximity and a shared \gls{ISFSI}.
     \end{itemize}
     \normalsize
     \end{table}
-
+\todo{After this point, I'm no longer noting everywhere you need to cite your 
+sources. It frankly needs to be everywhere. When you mention these sources in 
+the text in a manner that's unclear about where the data and information came 
+from, where the figures and tables have been reproduced, etc. Many more 
+citations need to be added throughout referring to everything relevant, 
+including prior work from the group, work explaining ADS/FDS/XDSs in the 
+begining, etc.  } 
 
     \begin{table}[H]
         \begin{center}
             \includegraphics[width=\textwidth]{figures/sec2.2_tab.png}
         \end{center}
-        \caption{Current Inventory at NPR sites by Storage Method as of December 2022}
+            \caption{Current Inventory at \gls{NPR} site by Storage Method as of 
+            December 2022 \todo[inline]{When referring to the sites, it's more 
+            common to refer to these as NPPs (nuclear power plants). Consider 
+            this. ALSO, CITE THE SOURCE}}
         \label{tab3}
     \end{table}
 
-    Table~\ref{tab3} presents the inventory distribution between wet and dry storage across all NPR sites.
+    Table~\ref{tab3} presents the inventory distribution between wet and dry 
+    storage across all \gls{NPR} sites.
     This table highlights the ongoing shift from pool storage to dry cask systems, driven by pool capacity limits,
     plant shutdowns, and long term storage planning in the absence of a federal repository.
 
@@ -144,17 +158,19 @@
         \begin{center}
             \includegraphics[width=\textwidth]{figures/fig2.1.png}
         \end{center}
-        \caption{Nuclear Power Reactor and ISFSI Sites (non-DOE) Currently Storing \gls{snf}}
+            \caption{Nuclear Power Reactor and \gls{ISFSI} Sites (non-\gls{DOE}) 
+            Currently Storing \gls{SNF} \todo[inline]{CITE THE SOURCE}}
         \label{fig2}
     \end{figure}
 
-    Figure~\ref{fig2} summarizes the distribution of commercial \gls{snf} assemblies across non-DOE reactor and independent spent fuel storage installation (ISFSI) sites by reactor operating status and storage configuration. The majority of \gls{snf} assemblies (approximately 79\%) are located at sites with all operating reactors, with most assemblies stored in a combination of wet and dry storage. Sites with fully shutdown reactors account for a smaller but non-negligible fraction of the inventory, primarily stored in dry casks following reactor shutdown. Sites with both operating and shutdown reactors and non-reactor commercial storage facilities together represent a minor portion of the total assembly count. This breakdown highlights the strong coupling between reactor operational status and \gls{snf} storage practices and provides important context for evaluating transportation, consolidation, and fuel cycle transition scenarios.
+    Figure~\ref{fig2} summarizes the distribution of commercial \gls{SNF} 
+    assemblies across non-\gls{DOE} reactor and \gls{ISFSI} sites by reactor operating status and storage configuration. The majority of \gls{SNF} assemblies (approximately 79\%) are located at sites with all operating reactors, with most assemblies stored in a combination of wet and dry storage. Sites with fully shutdown reactors account for a smaller but non-negligible fraction of the inventory, primarily stored in dry casks following reactor shutdown. Sites with both operating and shutdown reactors and non-reactor commercial storage facilities together represent a minor portion of the total assembly count. This breakdown highlights the strong coupling between reactor operational status and \gls{SNF} storage practices and provides important context for evaluating transportation, consolidation, and fuel cycle transition scenarios.
 
     \begin{figure}[H]
         \begin{center}
             \includegraphics[width=\textwidth]{figures/fig2.11.png}
         \end{center}
-        \caption{Dry \gls{snf} Storage Casks Loaded at Nuclear Power Reactor Sites}
+        \caption{Dry \gls{SNF} Storage Casks Loaded at Nuclear Power Reactor Sites}
         \label{fig3}
     \end{figure}
 
@@ -164,7 +180,9 @@
 
     GC-859 data also provide insights into fuel characteristics at discharge. Over time, average burnup has increased from
     early values below 20~GWd/MT in the 1970s to approximately 50 GWd/MT today. Correspondingly, initial enrichment has
-    risen from about 2\% U-235 in early fuel designs to nearly 4.5\% in modern PWR and BWR assemblies. These changes reflect
+    risen from about 2\% U-235\todo{The writing checklist is clear, this should 
+    be $^{235}U$, not U-235. Please check whole document for these instances 
+    and fix them.} in early fuel designs to nearly 4.5\% in modern \gls{PWR} and \gls{BWR} assemblies. These changes reflect
     improvements in core design, regulatory allowances, and utility strategies aimed at extending fuel cycle lengths and
     improving economic performance.\\
 
@@ -180,7 +198,9 @@
         \begin{center}
             \includegraphics[width=\textwidth]{figures/assemblies.png}
         \end{center}
-        \caption{Burn-up (GWd/MTHM) \& Initial Enrichment (\% U-235) by Number of Assemblies of \gls{snf} Through December 2022}
+        \caption{Burn-up (GWd/MTHM) \& Initial Enrichment (\% U-235) by Number 
+            of Assemblies of \gls{SNF} Through December 2022 \todo[inline]{Figure 
+            captions should be complete sentences. CITE THE SOURCE}}
         \label{fig4}
     \end{figure}
 
@@ -188,7 +208,8 @@
         \begin{center}
             \includegraphics[width=\textwidth]{figures/pwr_table.png}
         \end{center}
-        \caption{PWR 60 GWd/MT Spent Nuclear Fuel Decay Heat}
+            \caption{PWR 60 GWd/MT Spent Nuclear Fuel Decay Heat\todo[inline]{figure 
+            captions should be complete sentences. CITE THE SOURCE}}
         \label{tab4}
     \end{table}
 
@@ -209,12 +230,14 @@
         \label{fig6}
     \end{figure}
 
-    Representative burnup cases, drawn from the UFDC Inventory Report, provide insight into decay heat behavior.
-    These cases include PWR fuel discharged at 40 and 60~GWd/MT and BWR fuel discharged at 30 and 50~GWd/MT, typical
-    values bounding the burnup range of modern LWR fuel. These representative isotopic compositions are commonly used in fuel
-    cycle modeling tools such as Cyclus, ORIGEN, and UNF-ST\&DARDS.\\
+    Representative burnup cases, drawn from the UFDC \todo{create acronym\ldots 
+    what is UFDC? Where is the citation?} Inventory Report, provide insight into decay heat behavior.
+    These cases include \gls{PWR} fuel discharged at 40 and 60~GWd/MT and \gls{BWR} fuel discharged at 30 and 50~GWd/MT, typical
+    values bounding the burnup range of modern \gls{LWR} fuel. These representative isotopic compositions are commonly used in fuel
+    cycle modeling tools such as \textsc{Cyclus}, ORIGEN, and 
+    UNF-ST\&DARDS\todo{please add these acronyms to acros.tex.}.\\
 
-    As seen in Table~\ref{tab4} and Figure~\ref{fig6} the decay heat profile for PWR fuel discharged at 60~GWd/MT. At early cooling times, decay heat is
+    As seen in Table~\ref{tab4} and Figure~\ref{fig6} the decay heat profile for \gls{PWR} fuel discharged at 60~GWd/MT. At early cooling times, decay heat is
     dominated by fission products such as Cs-137 and Sr-90. At longer cooling times, actinides, particularly Pu-238, Pu-241,
     and Am-241, become the primary contributors. Higher burnup fuel retains more long-term decay heat, which has implications
     for storage, transport, and disposal.
@@ -227,7 +250,7 @@
         \label{tab5}
     \end{table}
 
-    Table~\ref{tab5} and Figure~\ref{fig7} present corresponding decay heat characteristics for BWR fuel discharged at 50~GWd/MT. Similar to the PWR case,
+    Table~\ref{tab5} and Figure~\ref{fig7} present corresponding decay heat characteristics for \gls{BWR} fuel discharged at 50~GWd/MT. Similar to the \gls{PWR} case,
     short term heat generation is controlled by fission products, while long term heat output is driven by actinides.
     These representative datasets are essential for evaluating engineered storage systems and for bounding performance
     assessments in fuel cycle simulations.\\
@@ -240,53 +263,57 @@
         \label{fig7}
     \end{figure}
 
-    While commercial reactors generate the vast majority of \gls{snf} in the United States, the DOE manages a separate and highly diverse
+    While commercial reactors generate the vast majority of \gls{SNF} in the United States, the \gls{DOE} manages a separate and highly diverse
     inventory originating from research, defense, and demonstration reactors, which is discussed in the following section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\gls{snf} at DOE Locations}
+\section{\gls{SNF} at \gls{DOE} Locations}
 
-    The U.S. DOE is responsible for \gls{snf} that falls outside the
+    The U.S. \gls{DOE} is responsible for \gls{SNF} that falls outside the
     commercial nuclear power sector. This includes fuel from defense production reactors, test and research reactors operated
     across national laboratories, early demonstration power reactors from the Atomic Energy Commission era, university research
     reactors once transferred to federal custody, and fuel used in research, examination, or fuel cycle development programs.
-    DOE also manages \gls{snf} originating from naval nuclear propulsion, although naval fuel is tracked separately due to classification
+    \gls{DOE} also manages \gls{SNF} originating from naval nuclear propulsion, although naval fuel is tracked separately due to classification
     restrictions and highly specialized handling requirements.\\
 
-    Unlike the relatively standardized commercial LWR inventory, DOE's \gls{snf} inventory is highly heterogeneous.
+    Unlike the relatively standardized commercial \gls{LWR} inventory, \gls{DOE}'s \gls{SNF} inventory is highly heterogeneous.
     It includes fuel from graphite moderated reactors, sodium cooled reactors, high flux isotope production reactors,
     heavy water reactors, TRIGA research reactors, breeder reactors, and early prototype power reactors. Fuel enrichments
     span a wide range from depleted uranium for production reactors to highly enriched uranium exceeding 93\% U-235 for
     test and training reactors. Many reactors used bespoke fuel element geometries and materials, resulting in over 229,000
-    individual fuel elements or pieces, covering several hundred unique fuel types. This diversity is central to DOE's ongoing
+    individual fuel elements or pieces, covering several hundred unique fuel types. This diversity is central to \gls{DOE}'s ongoing
     challenges in characterization, consolidation, and long term disposal planning.\\
 
-    By the end of 2022, DOE managed approximately 2,446~MTHM of \gls{snf} (excluding naval fuel), as documented in the Spent Fuel Database
-     (SFD). To support system level evaluations, this inventory has been grouped into 34 standardized categories based on
+    By the end of 2022, \gls{DOE} managed approximately 2,446~MTHM of \gls{SNF} (excluding naval fuel), as documented in the Spent Fuel Database
+     (SFD) \todo{cite the database here -- also, is SFD its real name?}. To 
+     support system level evaluations, this inventory has been grouped \todo{By 
+     you? by them? Be clear.} into 34 
+     standardized categories based on
      fuel matrix, cladding type, cladding condition, and enrichment. These parameters influence corrosion behavior,
      radionuclide release, storage system performance, and repository compatibility. Each category aggregates fuel with similar
      physical and chemical characteristics, enabling more tractable modeling of a highly diverse inventory.\\
 
-    Radionuclide inventories for DOE managed fuel are estimated through template depletion models that represent typical fuel
+    Radionuclide inventories for \gls{DOE}-managed fuel are estimated through template depletion models that represent typical fuel
     behavior at different burnups and cooling times. These templates are then scaled to match the mass, enrichment, and operating
-    history of individual \gls{snf} records. Based on these models, the total expected radioactivity of DOE managed \gls{snf} in 2030 is
+    history of individual \gls{SNF} records. Based on these models, the total 
+    expected radioactivity of \gls{DOE}-managed \gls{SNF} in 2030 is
     approximately 96~million~Ci for the nominal case. A bounding case, intended to capture the highest burnup or least
-    well characterized assemblies, reaches approximately 195~million~Ci. These values emphasize the wide variability in DOE \gls{snf}
+    well characterized assemblies, reaches approximately 195~million~Ci. These values emphasize the wide variability in \gls{DOE} \gls{SNF}
     and the presence of small subsets of high activity fuel that dominate radiological behavior.\\
 
-    Table ~\ref{tab6} shows the projected decay heat distribution of DOE spent nuclear fuel canisters for the year 2030.
-    Most DOE canisters generate less than 300~W and over 60\% generate less than 100~W,
-    about 97 \% of the DOE \gls{snf} canisters will be generating decay heat less than 300 watts.
-    Nearly all the DOE \gls{snf} canisters (>99\%) will be generating less than 1 kW, indicating that the majority of
-    DOE \gls{snf} is relatively low power at long cooling times.
+    Table ~\ref{tab6} shows the projected decay heat distribution of \gls{DOE} spent nuclear fuel canisters for the year 2030.
+    Most \gls{DOE} canisters generate less than 300~W and over 60\% generate less than 100~W,
+    about 97 \% of the \gls{DOE} \gls{SNF} canisters will be generating decay heat less than 300 watts.
+    Nearly all the \gls{DOE} \gls{SNF} canisters (>99\%) will be generating less than 1 kW, indicating that the majority of
+    \gls{DOE} \gls{SNF} is relatively low power at long cooling times.
 
 
     \begin{table}[H]
         \begin{center}
             \includegraphics[width=\textwidth]{figures/doe_projection.png}
         \end{center}
-        \caption{Projected decay heat distribution of DOE spent nuclear fuel canisters for the year 2030}
+        \caption{Projected decay heat distribution of \gls{DOE} spent nuclear fuel canisters for the year 2030}
         \label{tab6}
         \vspace{0.3em}
         \footnotesize
@@ -295,32 +322,32 @@
         \normalsize
     \end{table}
 
-    In 1995, DOE made the strategic decision to consolidate \gls{snf} storage at three primary sites: the Hanford Site in Washington,
+    In 1995, \gls{DOE} made the strategic decision to consolidate \gls{SNF} storage at three primary sites: the Hanford Site in Washington,
     Idaho National Laboratory (INL) in Idaho, and the Savannah River Site (SRS) in South Carolina. These locations now host nearly
-    all DOE managed \gls{snf}. Hanford contains the largest share, approximately 2,128~MTHM, primarily stored in sealed stainless steel
-    Multi-Canister Overpacks (MCOs). INL stores approximately 270~MTHM, much of it originating from research and test reactors.
-    SRS holds approximately 27~MTHM, largely from isotope production reactors and research reactor returns. Although DOE has
-    established standard disposal canister designs intended to support eventual geologic disposal, no DOE \gls{snf} has yet been packaged
+    all \gls{DOE}-managed \gls{SNF}. Hanford contains the largest share, approximately 2,128~MTHM, primarily stored in sealed stainless steel
+    Multi-Canister Overpacks (MCOs). \gls{INL} stores approximately 270~MTHM, much of it originating from research and test reactors.
+    \gls{SRS} holds approximately 27~MTHM, largely from isotope production reactors and research reactor returns. Although \gls{DOE} has
+    established standard disposal canister designs intended to support eventual geologic disposal, no \gls{DOE} \gls{SNF} has yet been packaged
     into these standardized canisters.\\
 
-    DOE also manages approximately 173.6~MTHM of spent nuclear fuel that originated from commercial nuclear power reactors,
-    but was transferred to DOE for research, testing, and fuel cycle demonstration activities. This inventory includes core debris
-    from Three Mile Island Unit~2, high-temperature gas-cooled reactor fuel from the Fort St.~Vrain reactor, and various LWR assemblies
+    \gls{DOE} also manages approximately 173.6~MTHM of spent nuclear fuel that originated from commercial nuclear power reactors,
+    but was transferred to \gls{DOE} for research, testing, and fuel cycle demonstration activities. This inventory includes core debris
+    from Three Mile Island Unit~2, high-temperature gas-cooled reactor fuel from the Fort St.~Vrain reactor, and various \gls{LWR} assemblies
     used in post-irradiation examination, rod consolidation experiments, and vitrification studies. Much of this fuel is no longer in intact
     assembly form and therefore requires packaging in specialized canisters prior to storage and disposal. Table~\ref{tab7} summarizes the
-    decay heat characteristics of the 950 canisters containing non-standard and research-origin spent nuclear fuel managed by DOE.\\
+    decay heat characteristics of the 950 canisters containing non-standard and research-origin spent nuclear fuel managed by \gls{DOE}.\\
 
-    In addition to research and commercial origin fuel, DOE manages naval reactor \gls{snf} through the Naval Nuclear Propulsion
-    Program (NNPP). This fuel is discharged from nuclear powered submarines, aircraft carriers, land based prototype reactors,
+    In addition to research and commercial origin fuel, \gls{DOE} manages naval reactor \gls{SNF} through the Naval Nuclear Propulsion
+    Program. This fuel is discharged from nuclear powered submarines, aircraft carriers, land based prototype reactors,
     and moored training ships. Naval fuel is fabricated with highly enriched uranium, resulting in exceptionally low transuranic
-    production compared to commercial LWR fuel. The current inventory is approximately 40~MTHM, with projections indicating less
+    production compared to commercial \gls{LWR} fuel. The current inventory is approximately 40~MTHM, with projections indicating less
     than 65~MTHM by 2035.
 
     \begin{table}[H]
         \begin{center}
             \includegraphics[width=\textwidth]{figures/doe.png}
         \end{center}
-        \caption{Decay heat characteristics of canisters containing \gls{snf} of commercial (NPR) origin managed by DOE}
+        \caption{Decay heat characteristics of canisters containing \gls{SNF} of commercial (NPR) origin managed by \gls{DOE}}
         \label{tab7}
         \vspace{0.3em}
         \footnotesize
@@ -329,32 +356,32 @@
         \normalsize
     \end{table}
 
-    Naval \gls{snf} is stored in specially engineered canisters, either “naval short” or “naval long”
-    variants, designed to meet repository heat, shielding, and criticality constraints. As of 2022, 201 naval \gls{snf} canisters have
-    been loaded and are stored at INL. Although naval fuel is highly enriched, long term decay heat is generally modest due to low transuranic buildup,
-    as shown in Table~\ref{tab8}, that provides the distribution of Naval \gls{snf} canisters based on nominal decay heat.
+    Naval \gls{SNF} is stored in specially engineered canisters, either “naval short” or “naval long”
+    variants, designed to meet repository heat, shielding, and criticality constraints. As of 2022, 201 naval \gls{SNF} canisters have
+    been loaded and are stored at \gls{INL}. Although naval fuel is highly enriched, long term decay heat is generally modest due to low transuranic buildup,
+    as shown in Table~\ref{tab8}, that provides the distribution of Naval \gls{SNF} canisters based on nominal decay heat.
 
     \begin{table}[H]
         \begin{center}
             \includegraphics[width=\textwidth]{figures/naval.png}
         \end{center}
-        \caption{Decay heat characteristics of naval \gls{snf} canisters}
+        \caption{Decay heat characteristics of naval \gls{SNF} canisters}
         \label{tab8}
     \end{table}
 
-    Overall, DOE's \gls{snf} inventory is characterized by its diversity, historical complexity, and unique storage challenges.
-    While commercial LWR fuel dominates total mass in the United States, DOE fuel dominates in terms of variety, specialization,
+    Overall, \gls{DOE}'s \gls{SNF} inventory is characterized by its diversity, historical complexity, and unique storage challenges.
+    While commercial \gls{LWR} fuel dominates total mass in the United States, \gls{DOE} fuel dominates in terms of variety, specialization,
     and the need for tailored treatment and disposal strategies. This distinction is critical for national level fuel cycle
     assessments and informs the development of repository design criteria and waste acceptance requirements.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\gls{snf} at Other Sites}
+\section{\gls{SNF} at Other Sites}
 
-    Beyond commercial nuclear power reactors and DOE facilities, a small amount of \gls{snf} is located at
+    Beyond commercial nuclear power reactors and \gls{DOE} facilities, a small amount of \gls{SNF} is located at
     other sites throughout the United States. These holdings are comparatively minor totaling only about 1.35~metric tons of
     heavy metal (MTHM), yet they represent a diverse set of institutions and reactor types that contribute to the broader national
-    fuel cycle inventory. The \gls{snf} at these locations is cataloged in the DOE Spent Fuel Database and originates primarily from
+    fuel cycle inventory. The \gls{SNF} at these locations is cataloged in the \gls{DOE} Spent Fuel Database and originates primarily from
     university research reactors, government agency operated reactors, and commercial research and development centers.\\
 
     University research reactors constitute the largest group within this category. Approximately twenty such reactors are
@@ -362,26 +389,27 @@
     10~MW, depending on reactor design and research application. Because these reactors use fuel at much lower power densities and
     achieve much smaller burnups than commercial reactors, refueling events are infrequent. In many cases, entire reactor lifetimes
     may pass without the need for a fuel discharge. When spent fuel is eventually removed from university research reactors,
-    it is transferred to DOE custody, most commonly to the INL or the Savannah River Site SRS, where
-    it becomes part of the broader DOE-managed \gls{snf} inventory discussed earlier. A small number of specialized critical facilities,
+    it is transferred to \gls{DOE} custody, most commonly to the \gls{INL} or 
+    the \gls{SRS}, where
+    it becomes part of the broader \gls{DOE}-managed \gls{SNF} inventory discussed earlier. A small number of specialized critical facilities,
     such as the AGN, 201 reactors or the Rensselaer Polytechnic Institute Critical Facility, operate at such low power that they are
     not expected to generate any spent fuel for discharge.\\
 
     Table~\ref{tab9} provides a listing of the university reactors and the quantities of spent nuclear fuel at those locations.
-    The quantities reported include the in-core amounts and \gls{snf} which has not reached the end of its useful life.
-    Although these facilities represent a wide geographic distribution, the total quantity of \gls{snf} remains very small compared to commercial or DOE sources.\\
+    The quantities reported include the in-core amounts and \gls{SNF} which has not reached the end of its useful life.
+    Although these facilities represent a wide geographic distribution, the total quantity of \gls{SNF} remains very small compared to commercial or \gls{DOE} sources.\\
 
     In addition to university operated facilities, several research reactors are run by other government agencies.
     These include national defense, materials testing, and specialized experimental reactors that support federal research programs.
-    Similar to university reactors, permanently discharged fuel from these facilities is shipped to INL or SRS, where it is
-    incorporated into DOE's consolidated inventory. Table~\ref{tab10} summarizes these government operated research reactors and the
-    corresponding \gls{snf} quantities that have been transferred to DOE management.
+    Similar to university reactors, permanently discharged fuel from these facilities is shipped to \gls{INL} or \gls{SRS}, where it is
+    incorporated into \gls{DOE}'s consolidated inventory. Table~\ref{tab10} summarizes these government operated research reactors and the
+    corresponding \gls{SNF} quantities that have been transferred to \gls{DOE} management.
 
     \begin{table}[H]
         \begin{center}
             \includegraphics[width=\textwidth]{figures/universities.png}
         \end{center}
-        \caption{University research reactor sites and their associated \gls{snf} inventories}
+        \caption{University research reactor sites and their associated \gls{SNF} inventories}
         \label{tab9}
     \end{table}
 
@@ -392,16 +420,16 @@
         \begin{center}
             \includegraphics[width=\textwidth]{figures/government.png}
         \end{center}
-        \caption{Research reactors operated by other government agencies and the associated \gls{snf} transferred to DOE custody for long term management.}
+        \caption{Research reactors operated by other government agencies and the associated \gls{SNF} transferred to \gls{DOE} custody for long term management.}
         \label{tab10}
     \end{table}
 
     A final category within this group consists of commercial research and development centers, a small number of which operate or
-    historically operated research reactors. These facilities contribute modest quantities of \gls{snf}, and in some cases, such as the
+    historically operated research reactors. These facilities contribute modest quantities of \gls{SNF}, and in some cases, such as the
     BWX Technologies site in Virginia, they support fuel-cycle research and destructive examination activities rather than
-    power-producing reactor operations. Table~\ref{tab11} lists these commercial R\&D centers and their corresponding \gls{snf} inventories.
+    power-producing reactor operations. Table~\ref{tab11} lists these commercial R\&D centers and their corresponding \gls{SNF} inventories.
     Although the total mass of fuel generated by these institutions is small, their presence reflects the broad technical
-    landscape of nuclear research in the United States and the need for DOE to manage diverse and specialized fuel forms
+    landscape of nuclear research in the United States and the need for \gls{DOE} to manage diverse and specialized fuel forms
     originating from non-power, non-defense applications.
 
     \begin{table}[H]
@@ -412,113 +440,128 @@
         \label{tab11}
     \end{table}
 
-    Overall, the \gls{snf} at these other sites represents the smallest contribution to the national fuel inventory by mass,
+    Overall, the \gls{SNF} at these other sites represents the smallest contribution to the national fuel inventory by mass,
     but it remains important due to its broad diversity and the unique characteristics of the research-reactor fuels involved.
-    When transferred to DOE custody, this fuel must be integrated into the same long-term planning, storage frameworks,
-    and disposition pathways used for the larger DOE \gls{snf} inventory.
+    When transferred to \gls{DOE} custody, this fuel must be integrated into the same long-term planning, storage frameworks,
+    and disposition pathways used for the larger \gls{DOE} \gls{SNF} inventory.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Reprocessing Waste}
 
 
-    In addition to \gls{snf}, the United States manages a substantial inventory of HLW
+    In addition to \gls{SNF}, the United States manages a substantial inventory of\gls{HLW}
     produced through reprocessing activities. Reprocessing refers to the chemical separation of uranium, plutonium, and fission
     products from irradiated nuclear fuel. Although commercial reprocessing ended decades ago in the United States,
     large quantities of waste were generated during both defense missions and early nuclear technology development.
-    These materials remain an important component of the national waste inventory and are distributed across several DOE sites,
+    These materials remain an important component of the national waste inventory and are distributed across several \gls{DOE} sites,
     as well as one former commercial facility at West Valley, New York.\\
 
     The physical form of reprocessing waste varies depending on the treatment processes used.
-    Historically, reprocessing operations produced large volumes of liquid HLW stored in underground tanks.
+    Historically, reprocessing operations produced large volumes of liquid\gls{HLW} stored in underground tanks.
     Long term isolation of these wastes requires stabilization, and two principal methods have been used: vitrification and calcination.
     Vitrification involves blending liquid waste with glass-forming additives and melting the mixture into a durable borosilicate glass
-    that is poured into stainless steel canisters. Calcination, used at INL, converts liquid waste into
-    a granular, powder like solid through high temperature evaporation. In addition to these aqueous waste forms, INL also manages metal
-    and ceramic waste streams produced through electrochemical treatment of sodium-bonded \gls{snf}, a specialized fuel type used in early
+    that is poured into stainless steel canisters. Calcination, used at \gls{INL}, converts liquid waste into
+    a granular, powder like solid through high temperature evaporation. In addition to these aqueous waste forms, \gls{INL} also manages metal
+    and ceramic waste streams produced through electrochemical treatment of sodium-bonded \gls{SNF}, a specialized fuel type used in early
     fast reactor programs.\\
 
-    Among the DOE sites, SRS has made the most progress in vitrification. Since 1996, the Defense Waste
-    Processing Facility has immobilized HLW into standardized glass canisters, producing 4,346 canisters as of December~31,~2022.
-    INL, by contrast, generated roughly 30,000~m\textsuperscript{3} of liquid waste during past reprocessing operations; between
+    Among the \gls{DOE} sites, \gls{SRS} has made the most progress in vitrification. Since 1996, the Defense Waste
+    Processing Facility has immobilized\gls{HLW} into standardized glass canisters, producing 4,346 canisters as of December~31,~2022.
+    \gls{INL}, by contrast, generated roughly 30,000~m\textsuperscript{3} of liquid waste during past reprocessing operations; between
     1960 and 1997, this material was converted into approximately 4,400~m\textsuperscript{3} of calcine, which is currently stored
     in stainless steel bins housed within concrete vaults. At the Hanford Site, reprocessing during defense plutonium production
-    generated an even larger inventory: approximately 56~million gallons of liquid HLW. About 220,000~m\textsuperscript{3} of this
+    generated an even larger inventory: approximately 56~million gallons of liquid\gls{HLW}. About 220,000~m\textsuperscript{3} of this
     material remains in underground tanks, and a major vitrification facility is under construction to process the waste into glass
     for long term disposition.\\
 
     Hanford also stores 1,936 cesium and strontium capsules produced between 1974 and 1985. Originally removed from liquid waste to
     support isotope applications, these capsules contain high concentrations of fission products and historically accounted for
     nearly 109~million curies of radioactivity. Through natural decay, the inventory has decreased to about 42~million curies,
-    and continued decay will further reduce the heat output and radiological hazard over the coming decades. DOE is currently
+    and continued decay will further reduce the heat output and radiological hazard over the coming decades. \gls{DOE} is currently
     preparing new dry storage systems to replace the aging water filled storage basins that house these capsules.\\
 
-    Electrochemical treatment at INL provides a distinct pathway for stabilizing sodium-bonded fuel from early fast-reactor programs.
+    Electrochemical treatment at \gls{INL} provides a distinct pathway for stabilizing sodium-bonded fuel from early fast-reactor programs.
     This process separates uranium metal from fission products and residual materials, generating two waste streams: a ceramic waste
     form containing salts and active fission products, and a metallic waste form containing cladding hulls and noble metals.
-    Up to 60~MTHM of sodium bonded fuel may ultimately be treated, and about 4~MTHM has been processed to date.\\
+    Up to 60~\gls{MTHM} of sodium bonded fuel may ultimately be treated, and 
+    about 4~\gls{MTHM} has been processed to date.\\
 
-    The overall radionuclide inventory associated with DOE reprocessing waste corresponds to an estimated 1.3~million watts of
+    The overall radionuclide inventory associated with \gls{DOE} reprocessing waste corresponds to an estimated 1.3~million watts of
     decay heat. Most vitrified waste canisters, over 99\% are projected to generate less than 1~kW of thermal power, reflecting the
     durability and stability of the immobilized waste forms. Although the total number of canisters may change as waste treatment
     continues, the radioactive content of the waste will decrease only through radioactive decay.\\
 
     The only commercial reprocessing facility ever operated in the United States was located at West Valley,
-    New York, where Nuclear Fuel Services processed approximately 640~MTHM of \gls{snf} between 1966 and 1972.
-    This operation generated about 2,500~m\textsuperscript{3} of liquid HLW, which was vitrified between 1996 and 2001 into
-    278 canisters. These canisters, including two used to drain the processing melter and one nonroutine HLW canister, remain
-    stored on site. Although the total waste mass is small compared to DOE's defense related inventory, the West Valley canisters
+    New York, where Nuclear Fuel Services processed approximately 
+    640~\gls{MTHM} of \gls{SNF} between 1966 and 1972.
+    This operation generated about 2,500~m\textsuperscript{3} of liquid\gls{HLW}, which was vitrified between 1996 and 2001 into
+    278 canisters. These canisters, including two used to drain the processing melter and one nonroutine\gls{HLW} canister, remain
+    stored on site. Although the total waste mass is small compared to \gls{DOE}'s defense related inventory, the West Valley canisters
     remain an important legacy of the nation's early commercial nuclear fuel cycle.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Incorporating the National \gls{snf} Inventory into Cyclus}
+\section{Incorporating the National \gls{SNF} Inventory into \textsc{Cyclus}}
 
-    The detailed characterization of the U.S. \gls{snf} inventory developed in this report provides a foundation for
-    quantitative fuel cycle modeling using the Cyclus simulation framework, shown in Figure~\ref{fig8}. Cyclus is an open source, agent based nuclear
+    The detailed characterization of the U.S. \gls{SNF} inventory developed in this report provides a foundation for
+    quantitative fuel cycle modeling using the \textsc{Cyclus} simulation framework, shown in Figure~\ref{fig8}. \textsc{Cyclus} is an open source, agent based nuclear
     fuel cycle simulator that enables the construction of user defined fuel cycle systems through modular facilities
     (“archetypes”). Each facility implements specific behaviors such as storage, processing, transformation,
     or consumption of nuclear materials allowing complex fuel cycle scenarios to be assembled from flexible,
-    interoperable components. The comprehensive summary of national \gls{snf} presented in this report directly informs the
-    development of new Cyclus modules and scenarios designed to evaluate accelerator driven system (ADS) configurations
+    interoperable components. The comprehensive summary of national \gls{SNF} presented in this report directly informs the
+    development of new \textsc{Cyclus} modules and scenarios designed to evaluate 
+    \gls{XDS} configurations
     and examine their potential impact on the U.S. waste inventory.\\
 
     \begin{figure}[H]
         \begin{center}
             \includegraphics[width=\textwidth]{figures/Cyclus.png}
         \end{center}
-        \caption{The Cyclus core offers APIs that simplify kernel interactions, allowing archetypes to be loaded modularity into the simulation.~\cite{huff_fundamental_2016}}
+            \caption{The \textsc{Cyclus} core offers an \gls{API} that simplifies kernel interactions, 
+            allowing archetypes to be loaded modularity into the simulation 
+            \cite{huff_fundamental_2016}.}
         \label{fig8}
     \end{figure}
 
-    A central objective of this work is to quantify the fuel-cycle performance of XDS technologies at isotopic resolution.
+    A central objective of this work is to quantify the fuel-cycle performance of \gls{XDS} technologies at isotopic resolution.
     Achieving this requires realistic input streams that reflect the current and projected isotopic compositions, burnup histories,
     and decay corrected radionuclide inventories of spent fuel discharged from commercial reactors. Using the updated
-    STANDARDS 5.0.1 dataset (formerly UNF-ST\&DARDS), age corrected isotopic vectors are used to construct representative \gls{snf}
+    STANDARDS 5.0.1 dataset (formerly UNF-ST\&DARDS)\todo{create acronym in 
+    acros.tex}, age corrected isotopic vectors are used to construct representative \gls{SNF}
     compositions that capture the effects of burnup, initial enrichment, fuel type, and decay time.
-    These data form the basis for establishing XDS input streams and for disaggregating the national \gls{snf} inventory into resource
+    These data form the basis for establishing \gls{XDS} input streams and for disaggregating the national \gls{SNF} inventory into resource
     classes that vary in transuranic content, radiotoxicity, or suitability for transmutation. In this way,
-    Cyclus simulations can distinguish which portions of the national inventory hold the highest potential value for Minor Actinides (MA) burning
-    XDS concepts.\\
+    \textsc{Cyclus} simulations can distinguish which portions of the national inventory hold the highest potential value for Minor Actinides (MA) burning
+    \gls{XDS} concepts.\\
 
-    To support these objectives, a dedicated U.S. inventory module is being developed within Cyclus. This module is designed to
-    represent the national waste inventory as a dynamic storage type facility that holds \gls{snf} categorized and parameterized
+    To support these objectives, a dedicated U.S. inventory module is being developed within \textsc{Cyclus}. This module is designed to
+    represent the national waste inventory as a dynamic storage type facility that holds \gls{SNF} categorized and parameterized
     according to the latest STANDARDS dataset. Within the module, each fuel batch is stored as a material object with an
-    associated mass, isotopic composition, and decay history. The module enables external Cyclus facilities, such as
-    ADS reactors to request material based on user defined specifications. When material is supplied, the inventory is
+    associated mass, isotopic composition, and decay history \todo{Should these 
+    be batches or assemblies (real question, I don't know the answer.}\todo{I 
+    don't mind this approach to decay handling,
+    but we could instead use the decay method 
+    \href{https://fuelcycle.org/arche/decay.html}{https://fuelcycle.org/arche/decay.html}.}\todo{
+    I would also 
+    recommend allowing this to be loaded with an optional cyclus lat-long location so that, if we want to 
+    model all 100 different locations, we can}. When combined with the other 
+    logic and facilities available in \textsc{Cyclus}, the module enables external \textsc{Cyclus} facilities, such as
+    a specific \gls{ADS} or \gls{FDS} facility to request material based on user defined specifications. When material is supplied, the inventory is
     automatically updated to reflect removal of the requested mass and isotopics. This functionality allows scenario
     studies to explore how much of the national inventory could be processed, the rate at which materials are consumed,
     and how inventory composition evolves over time as different technologies are deployed.\\
 
-    Parallel to the inventory module, an XDS facility module is under development to represent accelerator driven systems
-    capable of consuming transuranic rich \gls{snf}. This module is structured to accommodate a range of ADS design concepts,
+    Parallel to the inventory module, an \gls{XDS} facility module is under 
+    development to generically represent accelerator driven systems
+    capable of consuming transuranic rich \gls{SNF}. This module is structured to accommodate a range of \gls{ADS} design concepts,
     including different target materials, coolant types, and fuel compositions. The first implementation is based on the
-    ADS configuration proposed at Argonne National Laboratory. Within Cyclus, the ADS module receives material from the
+    \gls{ADS} configuration proposed at Argonne National Laboratory. Within \textsc{Cyclus}, the \gls{ADS} module receives material from the
     U.S. inventory module, processes it according to user specified operating parameters, and tracks the resulting mass reduction,
     changes in isotopic composition, and key performance metrics such as minor actinide destruction rate, energy production,
     and waste radiotoxicity reduction. The combination of these two modules one representing the national inventory and
-    the other representing consumption pathways enables system level evaluation of how ADS deployment scales, how many
+    the other representing consumption pathways enables system level evaluation of how \gls{ADS} deployment scales, how many
     units are needed to achieve specific waste reduction goals, and how quickly the inventory could be transmuted under
     different scenarios.\\
 
@@ -563,13 +606,13 @@
 \draw[->] (sep.east) ++(0,-0.5) -- ([yshift=-0.5cm]mix.west)
     node[midway, above, annot]{else};
 
-% Mixer -> XDS
+% Mixer -> \gls{XDS}
 \draw[->] (mix) -- node[above, annot]{Based on design} (xds);
 
-% XDS -> Storage
+% \gls{XDS} -> Storage
 \draw[->] (xds.south) |- (stor.east);
 
-% XDS -> Reprocessing
+% \gls{XDS} -> Reprocessing
 \draw[->] (xds.south) |- (reproc.east);
 
 % Separation -> Storage (unwanted composition), define junction
@@ -583,41 +626,41 @@
 
 \end{tikzpicture}%
 }
-\caption{Conceptual flow from UNF-STANDARDS inventory to XDS, storage, and reprocessing.}
+\caption{Conceptual flow from UNF-STANDARDS inventory to \gls{XDS}, storage, and reprocessing.}
 \end{figure}
 
-    Together, these modules create a quantitative framework linking the detailed \gls{snf} characterization performed in this report
+    Together, these modules create a quantitative framework linking the detailed \gls{SNF} characterization performed in this report
     with forward looking fuel cycle analyses. By embedding accurate isotopic compositions derived from STANDARDS data into
-    Cyclus simulations, it becomes possible to evaluate XDS system designs, assess trade offs among accelerator or target
+    \textsc{Cyclus} simulations, it becomes possible to evaluate \gls{XDS} system designs, assess trade offs among accelerator or target
     configurations, compare transmutation strategies, and measure their aggregate impact on the U.S. waste inventory.
     This integration ensures that future scenario analyses are grounded in realistic, data driven representations of
-    the commercial and DOE-managed \gls{snf} resources, enabling robust evaluation of advanced fuel cycle strategies.\\
+    the commercial and \gls{DOE}-managed \gls{SNF} resources, enabling robust evaluation of advanced fuel cycle strategies.\\
 
-    The isotopic feed streams used for XDS transmutation in Cyclus are derived directly from the STANDARDS 5.0.1 dataset at representative discharge burnups
-    (40–60 GWd/MTU for PWR fuel and 30–50 GWd/MTU for BWR fuel), with decay corrections applied to match the assumed spent fuel cooling time.
+    The isotopic feed streams used for \gls{XDS} transmutation in \textsc{Cyclus} are derived directly from the STANDARDS 5.0.1 dataset at representative discharge burnups
+    (40–60 GWd/MTU for \gls{PWR} fuel and 30–50 GWd/MTU for \gls{BWR} fuel), with decay corrections applied to match the assumed spent fuel cooling time.
     For scenarios focused strictly on minor actinide (MA) reduction, the feed consists of the isotopes that dominate long term radiotoxicity, decay heat,
-    and neutron absorption in the commercial \gls{snf} inventory: uranium (U-235, U-238), plutonium (Pu-238 through Pu-242), neptunium-237,
+    and neutron absorption in the commercial \gls{SNF} inventory: uranium (U-235, U-238), plutonium (Pu-238 through Pu-242), neptunium-237,
     americium (Am-241, Am-242m, Am-243), and curium (Cm-244 through Cm-247). Plutonium isotopes are included to maintain the subcritical multiplication
-    factor of the XDS, while the MA vector represents the primary target for transmutation. In some XDSs designs, technetium-99 and iodine-129 are
+    factor of the \gls{XDS}, while the MA vector represents the primary target for transmutation. In some \gls{XDS}s designs, technetium-99 and iodine-129 are
     also incorporated in the feed because of their strong spectral-shaping effects.~\cite{gohar_ads_2021}\\
 
-    A second, extended feed stream is used for XDS concepts that aim to simultaneously transmute long lived fission products (LLFPs) alongside actinides.
+    A second, extended feed stream is used for \gls{XDS} concepts that aim to simultaneously transmute long lived fission products (LLFPs) alongside actinides.
     In this scenario the MA composition described above is supplemented with selected LLFP isotopes that significantly influence long term radiotoxicity or
     neutron economy, including Tc-99, I-129, Cs-135, Se-79, Sn-126, Zr-93, Pd-107, Kr-85, and Sm-151.
     These LLFPs are incorporated only when the system design explicitly targets LLFP destruction;
     otherwise they appear solely as fission products generated during irradiation.
-    Together, the MA-only and MA+LLFP feed definitions allow Cyclus to represent a spectrum of XDS concepts ranging from conservative
-    actinide burner designs to more aggressive, waste reduction strategies. For molten-salt-based XDS systems,
+    Together, the MA-only and MA+LLFP feed definitions allow \textsc{Cyclus} to represent a spectrum of \gls{XDS} concepts ranging from conservative
+    actinide burner designs to more aggressive, waste reduction strategies. For molten-salt-based \gls{XDS} systems,
     the precise feed composition also reflects chemical compatibility requirements,
     including the redox potential and solubility of dissolved actinides or surrogate fluorides in the carrier salt.~\cite{herrera-martinez_transmutation_2007}\\
 
-    The output stream generated by the XDS facility in Cyclus represents the “spent fuel” of the ADS irradiation stage and captures the isotopic changes
+    The output stream generated by the \gls{XDS} facility in \textsc{Cyclus} represents the “spent fuel” of the \gls{ADS} irradiation stage and captures the isotopic changes
     that occur during transmutation. Following irradiation, the material contains reduced quantities of minor actinides, particularly Am-241, Am-243, Np-237,
     and multiple curium isotopes, which reflects the primary transmutation objective of the system.
     The plutonium vector evolves through a combination of fission and neutron capture reactions, typically showing reduced Pu-239 and Pu-241, and corresponding growth in Pu-240 and Pu-242.
     When LLFP transmutation is not activated in the scenario, long lived isotopes such as Tc-99, I-129, Sn-126, and Pd-107 remain in the output inventory.
     Overall, the resulting composition demonstrates substantial actinide mass reduction, increased fission product content, and a modified transuranic vector,
-    providing a physically realistic representation of XDS discharge material for further processing, storage, or reinsertion into subsequent fuel cycle stages.~\cite{noauthor_proceedings_nodate}
+    providing a physically realistic representation of \gls{XDS} discharge material for further processing, storage, or reinsertion into subsequent fuel cycle stages.~\cite{noauthor_proceedings_nodate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -625,28 +668,28 @@
 
 \section{Conclusion}
 
-    The national inventory of \gls{snf} reflects more than six decades of commercial power generation,
+    The national inventory of \gls{SNF} reflects more than six decades of commercial power generation,
     research reactor operations, defense missions, and early fuel cycle development in the United States.
     The vast majority of this inventory originates from commercial light water reactors, which have discharged
     approximately 91,000~MTU of fuel through the end of 2022. These assemblies are stored almost entirely at reactor sites,
     either in spent fuel pools or in independent spent fuel storage installations. Their characteristics, particularly the steady
     historical increase in fuel enrichment and burnup strongly shape isotopic composition, decay heat behavior, and long term storage
-    and disposal requirements. As burnup approaches 60~GWd/MT for typical PWR fuel, the isotopic vectors relevant to depletion
+    and disposal requirements. As burnup approaches 60~GWd/MT for typical \gls{PWR} fuel, the isotopic vectors relevant to depletion
     modeling, repository design, and criticality evaluations continue to evolve in ways that require consistent, data driven
     characterization.\\
 
-    In parallel to the commercial sector, the DOE manages a smaller but significantly more heterogeneous \gls{snf} inventory of
+    In parallel to the commercial sector, the \gls{DOE} manages a smaller but significantly more heterogeneous \gls{SNF} inventory of
     roughly 2,446~MTU. This category encompasses materials from defense production reactors, national laboratory test reactors,
     early demonstration power reactors, university and government research programs, and high enrichment research reactor fuels.
     These diverse fuel forms span a wide range of enrichments, cladding materials, and fabrication methods, and therefore play a
-    distinct role in system level evaluations of storage, transportation, and disposal. Additional small quantities of \gls{snf} totaling
-    about 1.35~MTU remain at university and commercial research facilities, but all such material ultimately transitions into DOE
+    distinct role in system level evaluations of storage, transportation, and disposal. Additional small quantities of \gls{SNF} totaling
+    about 1.35~MTU remain at university and commercial research facilities, but all such material ultimately transitions into \gls{DOE}
     custody for long term management.\\
 
     Reprocessing waste constitutes another significant element of the national inventory. At the Savannah River Site, 4,346 vitrified
-    waste canisters have been produced through decades of HLW treatment, while the West Valley Demonstration Project has
+    waste canisters have been produced through decades of\gls{HLW} treatment, while the West Valley Demonstration Project has
     generated an additional 278 vitrified canisters from past commercial reprocessing operations. Together with calcined waste at
-    the Idaho National Laboratory and liquid HLW stored at Hanford, these materials represent the legacy of earlier reprocessing
+    the Idaho National Laboratory and liquid\gls{HLW} stored at Hanford, these materials represent the legacy of earlier reprocessing
     activities and highlight the complexity of stabilizing chemically diverse and highly radioactive waste streams for geological
     disposal.\\
 
