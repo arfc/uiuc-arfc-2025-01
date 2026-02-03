@@ -1,19 +1,28 @@
 \section{Introduction}
     This summary consolidates U.S. \gls{SNF} and \gls{HLW}
-    inventory information from federal databases \todo{cite a federal 
-    database here}
-    and national reports \cite{carter_spent_2023}. This summary serves to inform isotopic 
+    inventory information in the U.S. from federal databases
+    and national reports, with primary reference to the most recent U.S.\ Spent Nuclear Fuel
+    and Reprocessing Waste Inventory Report published in 2023 \cite{carter_spent_2023}. While the underlying national inventory assessment
+    was generated based on GC-859 \cite{GC-859} and UNF-ST\&DARDS database \cite{banerjee_unf-st&dards:_2016}, this summary is
+    produced in 2025 and incorporates the updated data and isotopic information from the STANDARDS~5.0.1 database \cite{??},
+    to support current fuel cycle modeling needs.\\
+
+    The national inventory reports provides both historical inventories and long-term projections of commercial and \gls{DOE}-managed
+    spent nuclear fuel and \gls{HLW} extending through 2075. These projections capture the expected evolution of discharged
+    fuel mass, burnup, isotopic composition, storage configuration, and decay heat over multiple decades, making the dataset particularly
+    valuable for evaluating advanced fuel cycle and waste management strategies.\\
+
+    This summary serves to inform isotopic 
     composition analysis and strategic scenario development for modeling 
     fuel cycles enabled by accelerator driven and fusion-source driven 
     transmutation systems (XDS)\footnote{This report will refer to all \glspl{ADS} and 
     \glspl{FDS} as \gls{XDS}.}.  It provides (1) current commercial \gls{SNF} inventory, 
     (2) \gls{DOE}-managed \gls{SNF} from research and defense programs, (3) research 
     reactor \gls{SNF}, and (4) reprocessing waste inventories.
-
     This report will describe the current U.S. inventories at a high level, emphasizing 
     data to be incorporated into \textsc{Cyclus} \cite{huff_fundamental_2016} 
     facility archetypes and scenarios developed in support of the 
-    \gls{EINSTEIN} project \cite{fang_einstein:_2025}.
+    \gls{EINSTEIN} project \cite{fang_einstein:_2025}
 
 \section{Geospatial Information}
     Transportation of feed material to \gls{XDS} facilities and transportation of 
@@ -25,14 +34,16 @@
     data from \cite{carter_spent_2023}. 
     The map shows the locations of commercial nuclear power plants, 
     \glspl{ISFSI}, and \gls{DOE}-managed facilities.
-    Notable concentrations of \gls{SNF} storage sites are observed in the northeastern United States, the Midwest, the Southeast, and along the West Coast, reflecting the historical deployment of the nation's light water reactor fleet.
-    This spatial distribution is an important consideration for future fuel consolidation strategies, transportation planning, and repository siting analyses.
+    Notable concentrations of \gls{SNF} storage sites are observed in the northeastern United States,
+    the Midwest, the Southeast, and along the West Coast, reflecting the historical deployment of the nation's light water reactor fleet.
+    This spatial distribution is an important consideration for future fuel consolidation strategies, transportation planning, and
+    repository siting analyses.
 
     \begin{figure}[H]
         \begin{center}
-            \includegraphics[width=\textwidth]{figures/US_map.png}
+            \includegraphics[width=1.5\textwidth]{figures/US_map.png}
         \end{center}
-        \caption{Sites Storing Spent Nuclear Fuel and Reprocessing Waste at the End of 2022}
+        \caption{Sites Storing Spent Nuclear Fuel and Reprocessing Waste at the End of 2022. \cite{carter_spent_2023}}
         \label{fig1}
     \end{figure}
 
@@ -73,7 +84,9 @@
     Other noncommercial sources include university and government research reactors.
     Reprocessing waste totals reflect vitrified \gls{HLW} canisters produced through 2022.
 
-\section{U.S. Commercial Spent Nuclear Fuel Inventory} 
+
+\section{}
+\subsection{U.S. Commercial Spent Nuclear Fuel Inventory} 
 
 
  Commercial nuclear power reactors have operated in the United States since 1960, during which time a total of
@@ -287,7 +300,7 @@ begining, etc.  }
     challenges in characterization, consolidation, and long term disposal planning.\\
 
     By the end of 2022, \gls{DOE} managed approximately 2,446~MTHM of \gls{SNF} (excluding naval fuel), as documented in the Spent Fuel Database
-     (SFD) \todo{cite the database here -- also, is SFD its real name?}. To 
+     \todo{cite the database here -- also, is SFD its real name?}. To 
      support system level evaluations, this inventory has been grouped \todo{By 
      you? by them? Be clear.} into 34 
      standardized categories based on
@@ -506,15 +519,27 @@ begining, etc.  }
 
 \section{Incorporating the National \gls{SNF} Inventory into \textsc{Cyclus}}
 
-    The detailed characterization of the U.S. \gls{SNF} inventory developed in this report provides a foundation for
-    quantitative fuel cycle modeling using the \textsc{Cyclus} simulation framework, shown in Figure~\ref{fig8}. \textsc{Cyclus} is an open source, agent based nuclear
-    fuel cycle simulator that enables the construction of user defined fuel cycle systems through modular facilities
-    (“archetypes”). Each facility implements specific behaviors such as storage, processing, transformation,
-    or consumption of nuclear materials allowing complex fuel cycle scenarios to be assembled from flexible,
-    interoperable components. The comprehensive summary of national \gls{SNF} presented in this report directly informs the
-    development of new \textsc{Cyclus} modules and scenarios designed to evaluate 
-    \gls{XDS} configurations
-    and examine their potential impact on the U.S. waste inventory.\\
+    \textsc{Cyclus} provides a physics-informed, time-dependent simulation environment for modeling complex nuclear fuel cycles with
+    isotopic resolution. Unlike static material flow models, \textsc{Cyclus} explicitly tracks the movement, transformation, decay,
+    and accumulation of nuclear materials through user-defined facilities over time. Each material object contains a full nuclide vector,
+    allowing transuranics, fission products, and decay chains to be propagated consistently throughout the simulation.\\
+
+    A key strength of \textsc{Cyclus} is its agent-based architecture, in which reactors, separation plants, storage facilities, repositories,
+    and fuel cycle technologies are represented as independent but interacting agents. These agents exchange material through market-like
+    request and bid mechanisms, enabling realistic modeling of supply constraints, technology deployment schedules, and competition for limited
+    resources. This makes \textsc{Cyclus} particularly well suited for analyzing scenarios in which advanced systems such as \gls{XDS} draw
+    selectively from a heterogeneous national spent fuel inventory.\\
+
+    \textsc{Cyclus} natively supports isotopic decay, mass tracking, and transmutation through its physics kernel and material composition
+    libraries. It can model multiple fuel forms, burnup-dependent isotopic vectors, and time-dependent cooling, all of which are essential
+    for evaluating decay heat, radiotoxicity, and reactivity in advanced transmutation systems. Furthermore, \textsc{Cyclus} allows facilities
+    to implement custom physics models for irradiation, separation, and waste conditioning, making it possible to represent accelerator-driven
+    systems, molten-salt reactors, and reprocessing technologies within a single, integrated framework.\\
+
+    These capabilities allow the national \gls{SNF} inventory characterized in this report to be used not only as a static dataset, but as a
+    dynamically evolving resource that can be evaluated under competing deployment strategies. By combining STANDARDS-derived isotopic data
+    with \textsc{Cyclus}’s agent-based and physics-aware modeling infrastructure, this work enables quantitative assessment of how \gls{XDS}
+    technologies could alter the long-term trajectory of the U.S. nuclear waste inventory.
 
     \begin{figure}[H]
         \begin{center}
@@ -526,36 +551,29 @@ begining, etc.  }
         \label{fig8}
     \end{figure}
 
-    A central objective of this work is to quantify the fuel-cycle performance of \gls{XDS} technologies at isotopic resolution.
-    Achieving this requires realistic input streams that reflect the current and projected isotopic compositions, burnup histories,
-    and decay corrected radionuclide inventories of spent fuel discharged from commercial reactors. Using the updated
-    STANDARDS 5.0.1 dataset (formerly UNF-ST\&DARDS)\todo{create acronym in 
-    acros.tex}, age corrected isotopic vectors are used to construct representative \gls{SNF}
-    compositions that capture the effects of burnup, initial enrichment, fuel type, and decay time.
-    These data form the basis for establishing \gls{XDS} input streams and for disaggregating the national \gls{SNF} inventory into resource
-    classes that vary in transuranic content, radiotoxicity, or suitability for transmutation. In this way,
-    \textsc{Cyclus} simulations can distinguish which portions of the national inventory hold the highest potential value for Minor Actinides (MA) burning
-    \gls{XDS} concepts.\\
 
-    To support these objectives, a dedicated U.S. inventory module is being developed within \textsc{Cyclus}. This module is designed to
-    represent the national waste inventory as a dynamic storage type facility that holds \gls{SNF} categorized and parameterized
-    according to the latest STANDARDS dataset. Within the module, each fuel batch is stored as a material object with an
-    associated mass, isotopic composition, and decay history \todo{Should these 
-    be batches or assemblies (real question, I don't know the answer.}\todo{I 
-    don't mind this approach to decay handling,
-    but we could instead use the decay method 
-    \href{https://fuelcycle.org/arche/decay.html}{https://fuelcycle.org/arche/decay.html}.}\todo{
-    I would also 
-    recommend allowing this to be loaded with an optional cyclus lat-long location so that, if we want to 
-    model all 100 different locations, we can}. When combined with the other 
-    logic and facilities available in \textsc{Cyclus}, the module enables external \textsc{Cyclus} facilities, such as
-    a specific \gls{ADS} or \gls{FDS} facility to request material based on user defined specifications. When material is supplied, the inventory is
-    automatically updated to reflect removal of the requested mass and isotopics. This functionality allows scenario
-    studies to explore how much of the national inventory could be processed, the rate at which materials are consumed,
-    and how inventory composition evolves over time as different technologies are deployed.\\
+    \subsection{U.S. Inventory module}
+    A central objective of this work is to quantify the fuel cycle performance of \gls{XDS} technologies at isotopic
+    resolution. Achieving this requires input streams that reflect the true burnup, enrichment, and decay history of
+    spent fuel discharged from U.S. reactors. Using the updated STANDARDS 5.0.1 dataset, age-corrected isotopic vectors
+    are constructed for representative \gls{SNF} spanning a wide range of operating and cooling conditions. These data
+    allow the national inventory to be decomposed into resource classes with different transuranic content,
+    radiotoxicity, and transmutation potential, enabling \textsc{Cyclus} simulations to distinguish which portions of the
+    inventory are most suitable for \gls{XDS} deployment.\\
 
-    Parallel to the inventory module, an \gls{XDS} facility module is under 
-    development to generically represent accelerator driven systems
+    To support this functionality, a dedicated U.S.\ inventory module is being developed within \textsc{Cyclus}.
+    This module represents the national waste inventory as a dynamic storage facility populated with \gls{SNF} batches parameterized
+    using STANDARDS data. Each batch is stored as a \textsc{Cyclus} material object with associated mass and isotopic composition.
+    Radioactive decay can be handled either by initializing materials with age-corrected compositions derived from STANDARDS or
+    by allowing the built-in \textsc{Cyclus} decay mechanisms to evolve isotopics during the simulation.
+    External facilities, such as \gls{ADS} or \gls{FDS} modules, can request material according to user-defined criteria.
+    When material is transferred, the inventory is automatically updated, enabling tracking of consumption rates, remaining resources,
+    and time-dependent evolution of the waste stockpile.
+
+
+    \subsection{\gls{XDS} Facility Modules}
+
+    Parallel to the inventory module, an \gls{XDS} facility module is under development to generically represent accelerator driven systems
     capable of consuming transuranic rich \gls{SNF}. This module is structured to accommodate a range of \gls{ADS} design concepts,
     including different target materials, coolant types, and fuel compositions. The first implementation is based on the
     \gls{ADS} configuration proposed at Argonne National Laboratory. Within \textsc{Cyclus}, the \gls{ADS} module receives material from the
@@ -566,6 +584,10 @@ begining, etc.  }
     units are needed to achieve specific waste reduction goals, and how quickly the inventory could be transmuted under
     different scenarios.\\
 
+
+
+
+\subsection{Simulation architecture in \textsc{Cyclus}}
 \begin{figure}[H]
 \centering
 \resizebox{0.95\textwidth}{!}{%
@@ -661,7 +683,7 @@ begining, etc.  }
     The plutonium vector evolves through a combination of fission and neutron capture reactions, typically showing reduced $^{239}Pu$ and $^{241}Pu$, and corresponding growth in $^{240}Pu$ and $^{242}Pu$.
     When LLFP transmutation is not activated in the scenario, long lived isotopes such as $^{99}Tc$, $^{129}I$, $^{126}Sn$, and $^{107}Pd$ remain in the output inventory.
     Overall, the resulting composition demonstrates substantial actinide mass reduction, increased fission product content, and a modified transuranic vector,
-    providing a physically realistic representation of \gls{XDS} discharge material for further processing, storage, or reinsertion into subsequent fuel cycle stages.~\cite{noauthor_proceedings_nodate}
+    providing a physically realistic representation of \gls{XDS} discharge material for further processing, storage, or reinsertion into subsequent fuel cycle stages.~\cite{?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
