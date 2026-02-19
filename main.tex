@@ -554,23 +554,30 @@
         line width=0.8pt,
         minimum width=6.2cm,
         minimum height=2.2cm,
+        fill=blue!15,
         align=center
     }
     ]
 
     % Main box
-    \node[box] (inv) {\LARGE U.S. Inventory\\[2mm]\LARGE Archetype};
+    \node[box] (inv) {\LARGE U.S. Inventory\\[2mm]\LARGE STANDARDS 5.0.1};
 
-    % Output arrow + label (top)
-    \draw[->, line width=0.8pt] (inv.east) -- ++(6.5,0)
-    node[midway, above] {\LARGE Assemblies};
+    % Output arrow + label 
+    \draw[->, line width=0.8pt] (inv.east) ++(0,+0.75) -- ++(6,0)
+    node[midway, above, font=\small] {PWR, Init\_Enr=3.8\%, BU=41919};
+    
+    \draw[->, line width=0.8pt] (inv.east) ++(0,+0.25) -- ++(6,0)
+    node[midway, above, font=\small] {PWR, Init\_Enr=4.2\%, BU=43597};
 
-    % Output label (bottom)
-    \node[anchor=west] at ($(inv.east)+(1.5,-0.65)$) {\LARGE\& compositions};
+    \draw[->, line width=0.8pt] (inv.east) ++(0,-0.25) -- ++(6,0)
+    node[midway, above, font=\small] {BWR, Init\_Enr=2.19\%, BU=6237};
 
-    % Input arrow + label
-    \draw[->, line width=0.9pt] ($(inv.west)+(-6,0)$) -- (inv.west)
-    node[midway, above] {\LARGE STANDARDS 5.0.1};
+    \draw[->, line width=0.8pt] (inv.east) ++(0,-0.75) -- ++(6,0)
+    node[midway, above, font=\small] {$\dots\ N$ assemblies};
+
+    % % Input arrow + label
+    % \draw[->, line width=0.9pt] ($(inv.west)+(-6,0)$) -- (inv.west)
+    % node[midway, above] {\LARGE STANDARDS 5.0.1};
 
     \end{tikzpicture}
     }
@@ -611,6 +618,7 @@
         draw,
         rounded corners=10pt,
         line width=0.8pt,
+        fill=blue!15,
         minimum width=5.5cm,
         minimum height=2cm,
         align=center
@@ -639,9 +647,10 @@
     \draw[arrow] (xds.east) ++(0,-0.7) -- ++(5,0)
         node[midway, above] {\Large Other FP};
 
-    % % Bottom output (optional extra channel)
-    % \draw[arrow] (xds.south) -- ++(0,-2)
-    %     node[midway, right] {\Large Waste streams};
+    % Bottom output (optional extra channel)
+    \draw[arrow] (xds.south) -- ++(0,-2)
+        node[midway, left] {\Large XDS}
+        node[midway, right] {\Large Waste};
 
     \end{tikzpicture}
     }
@@ -660,9 +669,13 @@
     the commercial and \gls{DOE}-managed \gls{SNF} resources, enabling robust evaluation of advanced fuel cycle strategies.\\
 
 
+
 \begin{figure}[H]
 \centering
-\resizebox{0.95\textwidth}{!}{%
+\rotatebox{90}{%
+\begin{minipage}{\textheight}
+\centering 
+\resizebox{1.2\textwidth}{!}{%
 \begin{tikzpicture}[
     >=Stealth,
     node distance=3.2cm,
@@ -673,18 +686,22 @@
         minimum height=1.4cm,
         align=center
     },
+    % color variants
+    blueblock/.style={block, fill=blue!15},
+    pinkblock/.style={block, fill=red!10},
     annot/.style={font=\footnotesize, align=center}
 ]
 
 %-------------------- NODES (top row) --------------------%
-\node[block] (inv) {Inventory\\STANDARDS 5.0.1};
-\node[block, right=of inv] (sep) {Separation\\Facility};
-\node[block, right=of sep] (mix) {Mixer\\Facility};
-\node[block, right=of mix] (xds) {XDS\\Facilities};
+\node[blueblock] (inv) {U.S. Inventory\\STANDARDS 5.0.1};
+\node[pinkblock, right=of inv] (sep) {Separation\\Facility};
+\node[pinkblock, right=of sep] (mix) {Mixer\\Facility};
+\node[blueblock, right=of mix] (xds) {XDS\\Facilities};
 
-% bottom row
-\node[block, below=3.0cm of mix] (stor) {Storage\\Facility};
-\node[block, below=2.0cm of stor] (reproc) {Reprocessing\\Facility};
+%-------------------- NODES (bottom row) --------------------%
+% Two separate storages
+\node[pinkblock, below=6.0cm of sep] (stor_sep) {Storage\\Fcaility};
+\node[pinkblock, below=6.0cm of xds] (stor_xds) {XDS Storage\\ Facility};
 
 %-------------------- ARROWS --------------------%
 
@@ -701,29 +718,33 @@
 \draw[->] (sep.east) ++(0,-0.5) -- ([yshift=-0.5cm]mix.west)
     node[midway, above, annot]{else};
 
-% Mixer -> \gls{XDS}
+% Mixer -> XDS
 \draw[->] (mix) -- node[above, annot]{Based on design} (xds);
 
-% \gls{XDS} -> Storage
-\draw[->] (xds.south) |- (stor.east);
+% Separation -> Storage (unwanted composition)
+\draw[->] (sep.south) -- (stor_sep.north)
+    node[midway, right, annot]{unwanted\\composition};
 
-% \gls{XDS} -> Reprocessing
-\draw[->] (xds.south) |- (reproc.east);
+% XDS -> its own Storage (waste streams)
+\draw[->] (xds.south) -- (stor_xds.north)
+    node[midway, left, annot]{XDS\\ Waste};
 
-% Separation -> Storage (unwanted composition), define junction
-\draw[->] (sep.south)
-  -- ++(0,-3.7) coordinate (sepstor)
-  -- (stor.west)
-  node[pos=0.7, left, annot]{unwanted\\composition};
+% XDS -> OUTPUTS
+\draw[->] (xds.east) ++(0,0.5) -- ++(5,0)
+    node[midway, above, annot]{Residual Actinides};
 
-% Reprocessing -> junction on line to Storage
-\draw[->, dashed] (reproc.west) -| (sepstor);
+\draw[->] (xds.east) -- ++(5,0)
+    node[midway, above, annot]{LLFP};
+
+\draw[->] (xds.east) ++(0,-0.5) -- ++(5,0)
+    node[midway, above, annot]{Other FP};
 
 \end{tikzpicture}%
 }
-\caption{Conceptual flow from STANDARDS5.0.1 inventory to \gls{XDS}, storage, and reprocessing.}
+\caption{Conceptual flow from STANDARDS5.0.1 inventory to \gls{XDS} and separate storage pathways for separation waste and XDS waste.}
+\end{minipage}
+}
 \end{figure}
-
 
     The isotopic feed streams used for \gls{XDS} transmutation in \textsc{Cyclus} are derived directly from the STANDARDS 5.0.1 dataset at representative discharge burnups
     (40–60 GWd/MTU for \gls{PWR} fuel and 30–50 GWd/MTU for \gls{BWR} fuel), with decay corrections applied to match the assumed spent fuel cooling time.
