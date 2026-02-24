@@ -538,47 +538,67 @@
     radiotoxicity, and transmutation potential, enabling \textsc{Cyclus} simulations to distinguish which portions of the
     inventory are most suitable for \gls{XDS} deployment.\\
 
+
     \begin{figure}[H]
     \centering
     \resizebox{0.95\textwidth}{!}{%
     \begin{tikzpicture}[
-    font=\rmfamily,
-    box/.style={
-        draw,
-        rounded corners=10pt,
-        line width=0.8pt,
-        minimum width=6.2cm,
-        minimum height=2.2cm,
-        fill=blue!15,
-        align=center
-    }
+        font=\rmfamily,
+        box/.style={
+            draw,
+            rounded corners=12pt,
+            line width=0.9pt,
+            minimum width=8.2cm,
+            minimum height=3.2cm,
+            fill=blue!15,
+            align=center
+        },
+        % --- arrow styles (edit colors here) ---
+        a1/.style={->, line width=1pt, blue!40!black},
+        a2/.style={->, line width=1pt, blue!98!black},
+        a3/.style={->, line width=1pt, cyan!85!black},
+        afinal/.style={->, line width=1pt, teal!80!black},
+        % --- consistent label style ---
+        lab/.style={font=\small, align=center}
     ]
 
     % Main box
-    \node[box] (inv) {\LARGE U.S. Inventory\\[2mm]\LARGE STANDARDS 5.0.1};
+    \node[box] (inv) {\LARGE U.S. Inventory\\[3mm]\LARGE STANDARDS 5.0.1};
 
-    % Output arrow + label 
-    \draw[->, line width=0.8pt] (inv.east) ++(0,+0.75) -- ++(6,0)
-    node[midway, above, font=\small] {PWR, Init\_Enr=3.8\%, BU=41919};
-    
-    \draw[->, line width=0.8pt] (inv.east) ++(0,+0.25) -- ++(6,0)
-    node[midway, above, font=\small] {PWR, Init\_Enr=4.2\%, BU=43597};
+    % --- geometry controls ---
+    \def\arrowlen{6}        % arrow length to the right
+    \def\dy{0.6}            % equal spacing between arrows
+    \def\yone{0.9}          % top arrow offset (controls stack position)
 
-    \draw[->, line width=0.8pt] (inv.east) ++(0,-0.25) -- ++(6,0)
-    node[midway, above, font=\small] {BWR, Init\_Enr=2.19\%, BU=6237};
+    % First three equally spaced arrows
+    \draw[a1] (inv.east) ++(0,\yone) -- ++(\arrowlen,0)
+        node[midway, above, lab] {PWR, Init\_Enr=3.8\%, BU=41919};
 
-    \draw[->, line width=0.8pt] (inv.east) ++(0,-0.75) -- ++(6,0)
-    node[midway, above, font=\small] {$\dots\ N$ assemblies};
+    \draw[a2] (inv.east) ++(0,\yone-\dy) -- ++(\arrowlen,0)
+        node[midway, above, lab] {PWR, Init\_Enr=4.2\%, BU=43597};
 
-    % % Input arrow + label
-    % \draw[->, line width=0.9pt] ($(inv.west)+(-6,0)$) -- (inv.west)
-    % node[midway, above] {\LARGE STANDARDS 5.0.1};
+    \draw[a3] (inv.east) ++(0,\yone-2*\dy) -- ++(\arrowlen,0)
+        node[midway, above, lab] {BWR, Init\_Enr=2.19\%, BU=6237};
+
+    % Three vertical dots (centered between 3rd and last arrow)
+    \node at ($(inv.east)+(0.5*\arrowlen,\yone-2.5*\dy)$)
+        {
+            \begin{tikzpicture}
+                \draw[line width=1.1pt, teal!85!black] (0,0.19) -- (0,0.11);
+                \draw[line width=1.1pt, teal!80!black] (0,0.05) -- (0,-0.03);
+                \draw[line width=1.1pt, teal!70!black] (0,-0.10) -- (0,-0.18);
+            \end{tikzpicture}
+        };
+
+    % Last arrow (different color) + label
+    \draw[afinal] (inv.east) ++(0,\yone-3.6*\dy) -- ++(\arrowlen,0)
+        node[midway, above, lab] {$N$ assemblies in the nation};
 
     \end{tikzpicture}
     }
-    \caption{U.S. Inventory module}
+    \caption{Structure of the U.S. Inventory module based on STANDARDS 5.0.1 dataset, showing representative PWR and BWR assemblies defined by initial enrichment, burnup, and isotopic composition. 
+    The module holds all the assemblies in the national spent fuel inventory.}
     \end{figure}
-
 
     To support this functionality, a dedicated U.S.\ inventory module is being developed within \textsc{Cyclus}.
     This module represents the national waste inventory as a dynamic storage facility populated with \gls{SNF} batches parameterized
@@ -603,7 +623,6 @@
     units are needed to achieve specific waste reduction goals, and how quickly the inventory could be transmuted under
     different scenarios.\\
 
-
     \begin{figure}[H]
     \centering
     \resizebox{0.95\textwidth}{!}{%
@@ -618,32 +637,36 @@
         minimum height=2cm,
         align=center
     },
-    arrow/.style={->, line width=0.8pt}
+    inputarrow/.style={->, line width=1pt, ForestGreen!70!black},
+    actarrow/.style={->, line width=1pt, BrickRed!80!black},
+    llfparrow/.style={->, line width=1pt, NavyBlue!80!black},
+    fparrow/.style={->, line width=1pt, Goldenrod!80!black},
+    wastearrow/.style={->, line width=1pt, darkgray!80}
     ]
 
     % Main box
     \node[box] (xds) {\LARGE XDS\\[2mm]\LARGE Facilities};
 
     % Input arrow
-    \draw[arrow] ($(xds.west)+(-4,0)$) -- (xds.west)
+    \draw[inputarrow] ($(xds.west)+(-4,0)$) -- (xds.west)
         node[midway, above] {\Large Material Feed};
 
-    % ===== Output arrows (EDIT LABELS HERE) =====
+    % ===== Output arrows =====
 
     % Top-right output
-    \draw[arrow] (xds.east) ++(0,0.7) -- ++(5,0)
+    \draw[actarrow] (xds.east) ++(0,0.7) -- ++(5,0)
         node[midway, above] {\Large Residual Actinides};
 
     % Middle-right output
-    \draw[arrow] (xds.east) -- ++(5,0)
-        node[midway, above] {\Large LLFP};
+    \draw[llfparrow] (xds.east) -- ++(5,0)
+        node[midway, above] {\Large LLFPs};
 
     % Bottom-right output
-    \draw[arrow] (xds.east) ++(0,-0.7) -- ++(5,0)
-        node[midway, above] {\Large Other FP};
+    \draw[fparrow] (xds.east) ++(0,-0.7) -- ++(5,0)
+        node[midway, above] {\Large Other FPs};
 
-    % Bottom output (optional extra channel)
-    \draw[arrow] (xds.south) -- ++(0,-2)
+    % Bottom output
+    \draw[wastearrow] (xds.south) -- ++(0,-2)
         node[midway, left] {\Large XDS}
         node[midway, right] {\Large Waste};
 
@@ -651,7 +674,6 @@
     }
     \caption{\gls{XDS} Archetype design in Cyclus.}
     \end{figure}
-
 
 
 \subsection{Simulation architecture in \textsc{Cyclus}}
