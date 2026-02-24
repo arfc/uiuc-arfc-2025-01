@@ -4,7 +4,7 @@
     and national reports, with primary reference to the most recent U.S.\ Spent Nuclear Fuel
     and Reprocessing Waste Inventory Report published in 2023 \cite{carter_spent_2023}. While the underlying national inventory assessment
     was generated based on GC-859 \cite{GC-859} and UNF-ST\&DARDS database \cite{banerjee_unf-st&dards:_2016}, this summary is
-    produced in 2025 and incorporates the updated data and isotopic information from the STANDARDS~5.0.1 database \cite{??},
+    produced in 2025 and incorporates the updated data and isotopic information from the STANDARDS~5.0.1 database
     to support current fuel cycle modeling needs.\\
 
     The national inventory reports provides both historical inventories and long-term projections of commercial and \gls{DOE}-managed
@@ -22,7 +22,7 @@
     This report will describe the current U.S. inventories at a high level, emphasizing 
     data to be incorporated into \textsc{Cyclus} \cite{huff_fundamental_2016} 
     facility archetypes and scenarios developed in support of the 
-    \gls{EINSTEIN} project \cite{fang_einstein:_2025}
+    \gls{EINSTEIN} project \cite{fang_einstein_2025}.
 
 \section{Geospatial Information}
     Transportation of feed material to \gls{XDS} facilities and transportation of 
@@ -94,10 +94,7 @@
  Nine of the early demonstration reactors, including Peach Bottom Unit 1, Shippingport, and Fermi 1, have been fully decommissioned,
  and the remaining \gls{SNF} from these reactors is managed by the \gls{DOE}. The Fort St.
  Vrain high temperature gas cooled reactor, although also decommissioned, has its \gls{SNF} under \gls{DOE} custody at
- the \gls{INL}. Of the remaining fleet, 121 are \glspl{LWR}.
- Shoreham never entered commercial service, and Three Mile Island Unit 2 was permanently disabled in 1979,
- with both now under \gls{DOE} management. As of the end of 2022, 92 reactors remain operational and 27 are permanently shut down.
- Nearly every plant hosts a co-located \gls{ISFSI}, which becomes the primary
+ the \gls{INL}. Of the remaining fleet, 121 are \glspl{LWR}. Nearly every plant hosts a co-located \gls{ISFSI}, which becomes the primary
  storage facility after plant decommissioning.\\
 
     To facilitate inventory analysis, reactor sites are assigned to four categories based on operational status and onsite
@@ -224,7 +221,7 @@
         \begin{center}
             \includegraphics[width=\textwidth]{figures/burnup_enrichment.png}
         \end{center}
-        \caption{This figure presents the average annual burnup (GWd/MT) and initial enrichment (\% $^{235}$U) of U.S. spent nuclear fuel \cite{carter_spent_2023}.}
+        \caption{The average annual burnup (GWd/MT) and initial enrichment (\% $^{235}$U) of U.S. spent nuclear fuel \cite{carter_spent_2023}.}
         \label{fig5}
     \end{figure}
 
@@ -237,9 +234,7 @@
         \label{fig6}
     \end{figure}
 
-    Representative burnup cases, drawn from the UFDC \todo{create acronym\ldots 
-    what is UFDC? Where is the citation?} Inventory Report, provide insight into decay heat behavior.
-    These cases include \gls{PWR} fuel discharged at 40 and 60~GWd/MT and \gls{BWR} fuel discharged at 30 and 50~GWd/MT, typical
+    Representative burnup cases provide insight into decay heat behavior. 4T4BE46K39R100613These cases include \gls{PWR} fuel discharged at 40 and 60~GWd/MT and \gls{BWR} fuel discharged at 30 and 50~GWd/MT, typical
     values bounding the burnup range of modern \gls{LWR} fuel. These representative isotopic compositions are commonly used in fuel
     cycle modeling tools such as \textsc{Cyclus}, ORIGEN, and UNF-ST\&DARDS.\\
 
@@ -734,14 +729,15 @@
     node[midway, above, annot]{Residual Actinides};
 
 \draw[->] (xds.east) -- ++(5,0)
-    node[midway, above, annot]{LLFP};
+    node[midway, above, annot]{LLFPs};
 
 \draw[->] (xds.east) ++(0,-0.5) -- ++(5,0)
-    node[midway, above, annot]{Other FP};
+    node[midway, above, annot]{Other FsP};
 
 \end{tikzpicture}%
 }
-\caption{Conceptual flow from STANDARDS5.0.1 inventory to \gls{XDS} and separate storage pathways for separation waste and XDS waste.}
+\caption{Conceptual flow from STANDARDS5.0.1 inventory to \gls{XDS} and separate storage pathways for separation waste and XDS waste.
+Blue facilities denote proposed facilities for this work, while pink facilities represent existing \textsc{Cycamore} facilities.}
 \end{minipage}
 }
 \end{figure}
