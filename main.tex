@@ -563,7 +563,7 @@
     ]
 
     % Main box
-    \node[box] (inv) {\LARGE U.S. Inventory\\[3mm]\LARGE STANDARDS 5.0.1};
+    \node[box] (inv) {\LARGE U.S. Inventory};
 
     % --- geometry controls ---
     \def\arrowlen{6}        % arrow length to the right
@@ -686,7 +686,6 @@
     the commercial and \gls{DOE}-managed \gls{SNF} resources, enabling robust evaluation of advanced fuel cycle strategies.\\
 
 
-
 \begin{figure}[H]
 \centering
 \rotatebox{90}{%
@@ -695,66 +694,85 @@
 \resizebox{1.2\textwidth}{!}{%
 \begin{tikzpicture}[
     >=Stealth,
+    font=\large,                        % Bigger overall font
     node distance=3.2cm,
+    every path/.style={line width=1.4pt}, % Thicker arrows
     block/.style={
         draw,
         rounded corners,
-        minimum width=3.4cm,
-        minimum height=1.4cm,
+        minimum width=3.9cm,
+        minimum height=2.4cm,
+        line width=1.4pt,                % Thicker box borders
         align=center
     },
-    % color variants
     blueblock/.style={block, fill=blue!15},
     pinkblock/.style={block, fill=red!10},
-    annot/.style={font=\footnotesize, align=center}
+    annot/.style={font=\normalsize, align=center} % Bigger arrow labels
 ]
 
 %-------------------- NODES (top row) --------------------%
-\node[blueblock] (inv) {U.S. Inventory\\STANDARDS 5.0.1};
+\node[blueblock] (inv) {U.S. Inventory\\Facility};
 \node[pinkblock, right=of inv] (sep) {Separation\\Facility};
 \node[pinkblock, right=of sep] (mix) {Mixer\\Facility};
 \node[blueblock, right=of mix] (xds) {XDS\\Facilities};
 
 %-------------------- NODES (bottom row) --------------------%
-% Two separate storages
 \node[pinkblock, below=6.0cm of sep] (stor_sep) {Storage\\Fcaility};
 \node[pinkblock, below=6.0cm of xds] (stor_xds) {XDS Storage\\ Facility};
 
+%-------------------- LEGEND --------------------%
+\node[anchor=west] (legend) at ([xshift=20.2cm,yshift=-4.0cm]inv.south east) {%
+  \begin{tikzpicture}[arrows=-, line width=0.8pt]
+    \node[draw, rounded corners=6pt, fill=blue!15,
+          minimum width=1.6cm, minimum height=0.75cm] (l1) {};
+    \node[anchor=west, font=\normalsize] at ([xshift=0.35cm]l1.east)
+          {Developing archetypes};
+
+    \node[draw, rounded corners=6pt, fill=red!10,
+          minimum width=1.6cm, minimum height=0.85cm] (l2)
+          at ([yshift=-0.85cm]l1.south west) {};
+    \node[anchor=west, font=\normalsize]
+          at ([xshift=0.35cm]l2.east)
+          {Existing Cycamore archetypes};
+  \end{tikzpicture}%
+};
+
 %-------------------- ARROWS --------------------%
 
-% Inventory -> Separation Facility
 \draw[->] (inv) -- (sep)
-    node[midway, above, annot]{Assemblies}
-    node[midway, below, annot]{\& composition};
+    node[midway, above, annot]{Assemblies};
 
-% Sep Facility -> Mixer (MA, LLFPs, else)
-\draw[->] (sep.east) ++(0,0.5) -- ([yshift=0.5cm]mix.west)
+\draw[->] (sep.east) ++(0,0.7) -- ([yshift=0.7cm]mix.west)
     node[midway, above, annot]{MAs};
+
 \draw[->] (sep.east) -- (mix.west)
     node[midway, above, annot]{LLFPs};
-\draw[->] (sep.east) ++(0,-0.5) -- ([yshift=-0.5cm]mix.west)
-    node[midway, above, annot]{else};
 
-% Mixer -> XDS
+\draw[->] ([yshift=-0.7cm]sep.east) -- ([yshift=-0.7cm]mix.west)
+  node[midway, above]{
+    \begin{tikzpicture}[scale=0.8, arrows=-]
+      \draw[line width=1.0pt] (0,0.62) -- (0,0.55);
+      \draw[line width=1.0pt] (0,0.50) -- (0,0.43);
+      \draw[line width=1.0pt] (0,0.38) -- (0,0.31);
+    \end{tikzpicture}
+  };
+
 \draw[->] (mix) -- node[above, annot]{Based on design} (xds);
 
-% Separation -> Storage (unwanted composition)
 \draw[->] (sep.south) -- (stor_sep.north)
     node[midway, right, annot]{unwanted\\composition};
 
-% XDS -> its own Storage (waste streams)
 \draw[->] (xds.south) -- (stor_xds.north)
     node[midway, left, annot]{XDS\\ Waste};
 
-% XDS -> OUTPUTS
-\draw[->] (xds.east) ++(0,0.5) -- ++(5,0)
+\draw[->] (xds.east) ++(0,0.7) -- ++(5,0)
     node[midway, above, annot]{Residual Actinides};
 
 \draw[->] (xds.east) -- ++(5,0)
     node[midway, above, annot]{LLFPs};
 
-\draw[->] (xds.east) ++(0,-0.5) -- ++(5,0)
-    node[midway, above, annot]{Other FsP};
+\draw[->] (xds.east) ++(0,-0.7) -- ++(5,0)
+    node[midway, above, annot]{Other FPs};
 
 \end{tikzpicture}%
 }
