@@ -18,9 +18,6 @@
 .*.lb
 *.fdb_latexmk
 *.synctex.gz
-*.pdf
 
 ## The pdf report
 # *.pdf
-
-*.pdf
