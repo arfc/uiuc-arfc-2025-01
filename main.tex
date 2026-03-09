@@ -182,7 +182,7 @@
     early values below 20~GWd/MT in the 1970s to approximately 50 GWd/MT today. Correspondingly, initial enrichment has
     risen from about 2\% $^{235}U$. In early fuel designs to nearly 4.5\% in modern \gls{PWR} and \gls{BWR} assemblies. These changes reflect
     improvements in core design, regulatory allowances, and utility strategies aimed at extending fuel cycle lengths and
-    improving economic performance.\\
+    improving economic performance\cite{sassani_-line_2016}.\\
 
     The distribution of burnup and enrichment for discharged assemblies is represented in Figure~\ref{fig4}, demonstrating a clear shift toward
     higher burnup fuel across the fleet. This trend influences isotopic composition at discharge, particularly increasing
@@ -299,7 +299,7 @@
     Most \gls{DOE} canisters generate less than 300~W and over 60\% generate less than 100~W,
     about 97 \% of the \gls{DOE} \gls{SNF} canisters will be generating decay heat less than 300 watts.
     Nearly all the \gls{DOE} \gls{SNF} canisters (>99\%) will be generating less than 1 kW, indicating that the majority of
-    \gls{DOE} \gls{SNF} is relatively low power at long cooling times.
+    \gls{DOE} \gls{SNF} is relatively low power at long cooling times\cite{sassani_-line_2016}.
 
 
     \begin{table}[H]
@@ -321,7 +321,7 @@
     Multi-Canister Overpacks (MCOs). \gls{INL} stores approximately 270~MTHM, much of it originating from research and test reactors.
     \gls{SRS} holds approximately 27~MTHM, largely from isotope production reactors and research reactor returns. Although \gls{DOE} has
     established standard disposal canister designs intended to support eventual geologic disposal, no \gls{DOE} \gls{SNF} has yet been packaged
-    into these standardized canisters.\\
+    into these standardized canisters\cite{arthur_accelerator-based_1995}\\
 
     \gls{DOE} also manages approximately 173.6~MTHM of spent nuclear fuel that originated from commercial nuclear power reactors,
     but was transferred to \gls{DOE} for research, testing, and fuel cycle demonstration activities. This inventory includes core debris
@@ -455,7 +455,7 @@
     that is poured into stainless steel canisters. Calcination, used at \gls{INL}, converts liquid waste into
     a granular, powder like solid through high temperature evaporation. In addition to these aqueous waste forms, \gls{INL} also manages metal
     and ceramic waste streams produced through electrochemical treatment of sodium-bonded \gls{SNF}, a specialized fuel type used in early
-    fast reactor programs.\\
+    fast reactor programs\cite{aliberti_nuclear_2006}.\\
 
     Among the \gls{DOE} sites, \gls{SRS} has made the most progress in vitrification. Since 1996, the Defense Waste
     Processing Facility has immobilized \gls{HLW} into standardized glass canisters, producing 4,346 canisters as of December~31,~2022.
@@ -481,7 +481,7 @@
     The overall radionuclide inventory associated with \gls{DOE} reprocessing waste corresponds to an estimated 1.3~million watts of
     decay heat. Most vitrified waste canisters, over 99\% are projected to generate less than 1~kW of thermal power, reflecting the
     durability and stability of the immobilized waste forms. Although the total number of canisters may change as waste treatment
-    continues, the radioactive content of the waste will decrease only through radioactive decay.\\
+    continues, the radioactive content of the waste will decrease only through radioactive decay\cite{carter_spent_2023}.\\
 
     The only commercial reprocessing facility ever operated in the United States was located at West Valley,
     New York, where Nuclear Fuel Services processed approximately 
@@ -499,13 +499,13 @@
     \textsc{Cyclus} provides a physics-informed, time-dependent simulation environment for modeling complex nuclear fuel cycles with
     isotopic resolution. Unlike static material flow models, \textsc{Cyclus} explicitly tracks the movement, transformation, decay,
     and accumulation of nuclear materials through user-defined facilities over time. Each material object contains a full nuclide vector,
-    allowing transuranics, fission products, and decay chains to be propagated consistently throughout the simulation.\\
+    allowing transuranics, fission products, and decay chains to be propagated consistently throughout the simulation\cite{gidden_agent-based_2015}.\\
 
     A key strength of \textsc{Cyclus} is its agent-based architecture, in which reactors, separation plants, storage facilities, repositories,
     and fuel cycle technologies are represented as independent but interacting agents. These agents exchange material through market-like
     request and bid mechanisms, enabling realistic modeling of supply constraints, technology deployment schedules, and competition for limited
     resources. This makes \textsc{Cyclus} particularly well suited for analyzing scenarios in which advanced systems such as \gls{XDS} draw
-    selectively from a heterogeneous national spent fuel inventory.\\
+    selectively from a heterogeneous national spent fuel inventory\cite{scopatz_cyclus_2015}.\\
 
     \textsc{Cyclus} natively supports isotopic decay, mass tracking, and transmutation through its physics kernel and material composition
     libraries. It can model multiple fuel forms, burnup-dependent isotopic vectors, and time-dependent cooling, all of which are essential
@@ -516,7 +516,7 @@
     These capabilities allow the national \gls{SNF} inventory characterized in this report to be used not only as a static dataset, but as a
     dynamically evolving resource that can be evaluated under competing deployment strategies. By combining STANDARDS-derived isotopic data
     with \textsc{Cyclus}’s agent-based and physics-aware modeling infrastructure, this work enables quantitative assessment of how \gls{XDS}
-    technologies could alter the long-term trajectory of the U.S. nuclear waste inventory.
+    technologies could alter the long-term trajectory of the U.S. nuclear waste inventory\cite{baeFuelCycleTransition2018}.
 
     \begin{figure}[H]
         \begin{center}
@@ -536,7 +536,7 @@
     are constructed for representative \gls{SNF} spanning a wide range of operating and cooling conditions. These data
     allow the national inventory to be decomposed into resource classes with different transuranic content,
     radiotoxicity, and transmutation potential, enabling \textsc{Cyclus} simulations to distinguish which portions of the
-    inventory are most suitable for \gls{XDS} deployment.\\
+    inventory are most suitable for \gls{XDS} deployment\cite{peterson_additional_2017}.\\
 
 
     \begin{figure}[H]
@@ -621,7 +621,7 @@
     and waste radiotoxicity reduction. The combination of these two modules one representing the national inventory and
     the other representing consumption pathways enables system level evaluation of how \gls{ADS} deployment scales, how many
     units are needed to achieve specific waste reduction goals, and how quickly the inventory could be transmuted under
-    different scenarios.\\
+    different scenarios\cite{herrera-martinez_transmutation_2007}.\\
 
     \begin{figure}[H]
     \centering
@@ -683,7 +683,7 @@
     \textsc{Cyclus} simulations, it becomes possible to evaluate \gls{XDS} system designs, assess trade offs among accelerator or target
     configurations, compare transmutation strategies, and measure their aggregate impact on the U.S. waste inventory.
     This integration ensures that future scenario analyses are grounded in realistic, data driven representations of
-    the commercial and \gls{DOE}-managed \gls{SNF} resources, enabling robust evaluation of advanced fuel cycle strategies.\\
+    the commercial and \gls{DOE}-managed \gls{SNF} resources, enabling robust evaluation of advanced fuel cycle strategies\cite{carlsen_cycamore_2014}.\\
 
 
 \begin{figure}[H]
@@ -757,7 +757,7 @@
     \end{tikzpicture}
   };
 
-\draw[->] (mix) -- node[above, annot]{Based on design} (xds);
+\draw[->] (mix) -- node[above, annot]{Material Feed} (xds);
 
 \draw[->] (sep.south) -- (stor_sep.north)
     node[midway, right, annot]{unwanted\\composition};
@@ -806,7 +806,7 @@ Blue facilities denote proposed facilities for this work, while pink facilities 
     The plutonium vector evolves through a combination of fission and neutron capture reactions, typically showing reduced $^{239}Pu$ and $^{241}Pu$, and corresponding growth in $^{240}Pu$ and $^{242}Pu$.
     When LLFP transmutation is not activated in the scenario, long lived isotopes such as $^{99}Tc$, $^{129}I$, $^{126}Sn$, and $^{107}Pd$ remain in the output inventory.
     Overall, the resulting composition demonstrates substantial actinide mass reduction, increased fission product content, and a modified transuranic vector,
-    providing a physically realistic representation of \gls{XDS} discharge material for further processing, storage, or reinsertion into subsequent fuel cycle stages.~\cite{?}
+    providing a physically realistic representation of \gls{XDS} discharge material for further processing, storage, or reinsertion into subsequent fuel cycle stages\cite{wagner_categorization_2013}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

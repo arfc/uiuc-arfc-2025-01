@@ -195,9 +195,118 @@
   url={https://gc859.pnnl.gov/},
 }
 
-@techreport{STANDARDS5.0.1,
-  author = {},
-  institution = {},
-  title = {},
-  year = {}
+
+
+@phdthesis{nyberg_development_2025,
+	address = {United States -- Wisconsin},
+	type = {Ph.{D}.},
+	title = {Development of a {Chloride} {Salt} {Fission}-{Fusion} {Hybrid} {System} for the {Transmutation} of {Minor} {Actinide} {Waste}},
+	copyright = {Database copyright ProQuest LLC; ProQuest does not claim copyright in the individual underlying works.},
+	isbn = {9798265446954},
+	url = {https://www.proquest.com/pqdtglobal/docview/3276782923/abstract/D71F2BF2B2C14EEEPQ/1},
+	abstract = {Minor Actinides (MAs) complicate repository design and are difficult to transmute in traditional reactors, but may be burned efficiently and safely using subcritical Externally Driven Systems (EDSs). Four primary categories were targets of analysis to further the understanding of EDS and create a feasible design to effectively burn long-lived nuclear waste from fission Used Nuclear Fuel (UNF):
+• Down-selection of potential design characteristics alongside scoping and neutronics feasibility studies.
+• Improvements to subcritical neutronics methodologies and applications to the optimization of subcritical systems.
+• Workflows enabling accurate and efficient multiphysics analysis of EDSs and application to both critical and subcritical MA-burners, comparing safety over a wide array of accident scenarios.
+• An expansion of economics methods to enable cost-benefit analyses of the down-selected fusion driven MA-burning EDS, and an application of these methods to assess its economics feasibility.
+A novel molten chloride MA-fueled subcritical MA burner driven by a fusion neutron source (a Fission-Fusion Hybrid (FFH)) is presented that demonstrates neutronic viability, potential positive impacts on repository loading, safety benefits over an MA-fueled critical system, and potential for economic viability through value stacking of multiple revenue streams.
+Subcritical system power is limited by the source strength, operating fission multiplication (kef f ), and the efficient utilization of source neutrons. Viable driving neutron sources are feasible in the near-term, and fusion neutron sources down-selected due to recent technological improvements, modern projects, and the ability to scale to moderate production rates on the order of 1017-1018 n s in the near future. Molten salts provide significant advantages over other coolants from the potential for extremely high burnups and integration with existing fuel processing technologies. Chloride salts were chosen due to neutron energy spectra requirements for effective MA burning. Two primary compositions were chosen for further analysis: a UNF-derived MA composition from traditional Uranium-Oxide (UOX) fuel in Light Water Reactors (LWRs) and another modeling MA from Mixed-Oxide (MOX)-fueled LWRs. This system presents advantages over previous designs in literature, and demonstrates the potential to significantly improve the efficiency of repositories through safe and effective burning of MAs.
+Subcritical system power is limited by the source strength, operating kef f , and the efficient utilization of source neutrons. A novel definition for source utilization η is introduced as an effective predictor of power over a wide range of kef f which enables a significant reduction in sensitivity to uncertainty in initial eigenvalue calculations and 2-3 orders of magnitude xv faster statistical convergence in fixed source calculations at kef f = 0.98. This facilitates efficient analysis and optimization of subcritical power in Monte Carlo based neutronics codes. Initial characteristics of the annular subcritical system are explored in OpenMC, and parametric studies evaluating η are performed leading to general geometric and material power scalings for subcritical systems. Through maximizing η, models achieve subcritical powers above 500 MWth and tritium production far above replacement with a compact mirror fusion device on the order of one megawatt with a source strength of 5 × 1017 n s and a significantly subcritical blanket (kef f = 0.98). These techniques are then applied to a parametric model of a scaled fusion mirror with geometries and sources accurate to the next generation of fusion mirror devices, and demonstrate powers of nearly 1500 MWth and tritium breeding ratios above 30.
+Two challenges were identified in the multiphysics modeling of EDSs for Transuranic (TRU) burning with existing workflows: complex, spatially varying sources and flexible opensource production of cross-sections. A workflow is presented coupling the source and multigroup cross-section generation within OpenMC to the GeN-Foam multiphysics solver. First, OpenMC generated nuclear data was exported for transuranic-based molten salt reactor GeN-Foam model, and neutronics characteristics were verified against an equivalent OpenMC model. This TRU-based fueled salt was compared to uranium-thorium molten salt at steady state and over a range of potential accident scenarios. Secondly, a method utilizing the OpenMC C++ API sampled a fusion source onto a mesh used within GeN-Foam simulations, enabling closely coupled EDS multiphysics analysis. This spatially accurate source definition was verified against OpenMC models, and then was demonstrated for transient scenarios. This workflow enables closely coupled multiphysics analysis of complex critical or EDSs using open-source tools. This workflow is then applied to critical and subcritical versions of the MA-chloride FFH systems down-selected and optimized in neutronics analysis. While critical MA-chloride systems are stable to accident scenarios with long timescales, inherent reactor physics characteristics of the MA fuel greatly increase sensitivity to Unprotected Transient Over Power (UTOP) reactivity insertions. Subcritical systems operate far from criticality and are intrinsically stable to this type of accident scenario, presenting a motivation for subcritical operation.
+The FFH device proposed presents several value streams beyond electricity generation, including the increase in efficiency of long-term nuclear waste repositories and production of substantial amounts of nuclear fusion fuel. A new method for the analysis of fusion fuel cycles was created based on the fission fuel cycle code Cyclus, and demonstrates a new ability to flexibly analyze complex fusion systems. Predictions for potential revenue from each source are made, and find that both MA burning and tritium production can provide revenue streams of the same magnitude as electricity production. Nuclear costing analysis is notoriously difficult, and FFH systems combine many of the complications of the established nuclear fission analysis with novel nuclear fusion costs. New fusion models are added to the fission capital costing code ACCERT, and similar methods are applied to the specific magnetic mirror system used as the driving neutron source for the FFH. The combined cost of the fission, fusion, and secondary systems for the FFH are estimated and the mirror-based systems analyzed in subcritical neutronics design are estimated to cost \$4.5 billion to build. A Net Present Value (NPV) study of the system using the predicted costs and revenues finds that the system may be economically feasible if revenues from MA burning can be realized.},
+	language = {English},
+	urldate = {2026-01-13},
+	school = {The University of Wisconsin - Madison},
+	author = {Nyberg, Matthew J.},
+	year = {2025},
+	keywords = {Nuclear engineering, Transmutation, Applied physics, Fission-Fusion Hybrid, Minor Actinides, Subcritical systems},
+	file = {Full Text PDF:/Users/summer/Zotero/storage/K49JLAD3/Nyberg - 2025 - Development of a Chloride Salt Fission-Fusion Hybrid System for the Transmutation of Minor Actinide.pdf:application/pdf},
+}
+
+@techreport{sassani_-line_2016,
+	address = {Albuquerque, NM, United States},
+	title = {The {On}-line {Waste} {Library} ({OWL}): {Usage} and {Inventory} {Status} {Report}},
+	url = {https://www.energy.gov/sites/prod/files/2017/02/f34/17OnlineWasteLibraryUsageInventoryStatusReport%20OWL.pdf},
+	number = {FCRD-UFD-2016-000080; SAND2016-9485 R},
+	institution = {Sandia National Lab. (SNL-NM), Albuquerque, NM (United States)},
+	author = {Sassani, David and Jang, Je-Hun and Mariner, Paul and Price, Laura and {Rechard, Robert} and Rigali, Mark and Rogers, Ralph and Stein, Emily and Walkow, Walter M. and Weck, Philippe},
+	month = sep,
+	year = {2016},
+	file = {PDF:/Users/summer/Zotero/storage/FDGSYY7Q/Sassani et al. - The On-line Waste Library (OWL) Usage and Inventory Status Report.pdf:application/pdf},
+}
+
+@incollection{arthur_accelerator-based_1995,
+	address = {Boston, MA},
+	title = {Accelerator-{Based} {Systems} for {Plutonium} {Destruction} and {Nuclear} {Waste} {Transmutation}},
+	isbn = {978-1-4899-1048-6},
+	url = {https://doi.org/10.1007/978-1-4899-1048-6_17},
+	doi = {10.1007/978-1-4899-1048-6_17},
+	abstract = {Accelerator-base systems are described that can eliminate long-lived nuclear materials. The impact of these systems on global issues relating to plutonium minimization and nuclear waste disposal can be significant. An overview of the components that comprise these systems is given, along with discussion of technology development status and needs. A technology development plan is presented with emphasis on first steps that would demonstrate technical performance.},
+	language = {en},
+	urldate = {2026-02-24},
+	booktitle = {Global {Energy} {Demand} in {Transition}: {The} {New} {Role} of {Electricity}},
+	publisher = {Springer US},
+	author = {Arthur, E. D.},
+	editor = {Kursunoglu, Behram N. and Mintz, Stephan L. and Perlmutter, Arnold},
+	year = {1995},
+	keywords = {Fission Product, Molten Salt, Molten Salt Reactor, Spend Fuel, Weapon Plutonium},
+	pages = {201--221},
+	file = {Full Text PDF:/Users/summer/Zotero/storage/96VCCS45/Arthur - 1995 - Accelerator-Based Systems for Plutonium Destruction and Nuclear Waste Transmutation.pdf:application/pdf},
+}
+
+
+@mastersthesis{baeFuelCycleTransition2018,
+	address = {Urbana, IL},
+	title = {Fuel cycle transition simulation capabilities in {CYCLUS}},
+	copyright = {Copyright 2018 Jin Whan Bae},
+	url = {https://www.ideals.illinois.edu/handle/2142/102517},
+	abstract = {Recent interest in advanced reactors and the following need for techno-economic transitions has increased the demand for tools necessary to model complex nuclear fuel cycles (NFCs) and advanced reactor technologies. This thesis demonstrates the capability of CYCLUS , the agent-based fuel cycle simulator, to model, simulate, and analyze real-life fuel cycle transition scenarios. I introduce new methods and tools that use various databases to model and simulate real-world nuclear fuel cycle transition scenarios involving advanced reactor technologies.
+
+The work in this thesis contains: (1) benchmarking Cyclus to other nuclear fuel cycle simulators (NFC simulators); (2) developing new methods and tools necessary for modeling and simulating real-world fuel cycle transition scenarios; (3) simulation of both domestic and international nuclear technology transitions.
+
+The methods and tools developed for such capabilities include: (1) modeling and simulating past and current nuclear fleets using historic nuclear reactor operations database; (2) modeling individual reactors and their operating history to calculate nuclear material inventory; (3) modeling Molten Salt Reactor (MSR) behavior in a large-scale fuel cycle simulation.
+
+Benchmark work shows that CYCLUS results coincide with results from other NFC simulators with minor differences due to modeling choices. Additionally, this thesis demonstrates the CYCLUS capability to effectively model and simulate real-life NFC transition scenarios that involve advanced reactor technologies such as MSRs.},
+	language = {en},
+	urldate = {2019-06-13},
+	school = {University of Illinois at Urbana-Champaign},
+	author = {Bae, Jin Whan},
+	month = dec,
+	year = {2018},
+	file = {Full Text PDF:/Users/summer/Zotero/storage/NAP77Q4U/Bae - 2018 - Fuel cycle transition simulation capabilities in C.pdf:application/pdf;Snapshot:/Users/summer/Zotero/storage/SIVL975R/102517.html:text/html;Snapshot:/Users/summer/Zotero/storage/RMWZTFLG/102517.html:text/html},
+}
+
+@article{scopatz_cyclus_2015,
+	title = {Cyclus {Archetypes}},
+	journal = {Submitted},
+	author = {Scopatz, Anthony M. and Huff, Kathryn D. and Gidden, Matthew J. and Carlsen, Robert W. and Flanagan, Robert R. and McGarry, Meghan B. and Opotowsky, Arrielle C. and Schneider, Erich A. and Wilson, Paul P.H.},
+	year = {2015},
+	file = {paper.pdf:/Users/summer/Zotero/storage/NPXV2LGU/2BSTD6DX.pdf:application/pdf},
+}
+
+@phdthesis{gidden_agent-based_2015,
+	address = {Madison, WI, United States},
+	type = {{PhD} {Thesis}},
+	title = {An {Agent}-{Based} {Modeling} {Framework} and {Application} for the {Generic} {Nuclear} {Fuel} {Cycle}},
+	abstract = {Key components of a novel methodology and implementation of an agent-based, dynamic nuclear fuel cycle simulator, Cyclus , are presented. The nuclear fuel cycle is a complex, physics-dependent supply chain. To date, existing dynamic simulators have not treated constrained fuel supply, time-dependent, isotopic-quality based demand, or fuel fungibility particularly well. Utilizing an agent-based methodology that incorporates sophisticated graph theory and operations research techniques can overcome these deficiencies. This work describes a simulation kernel and agents that interact with it, highlighting the Dynamic Resource Exchange (DRE), the supply-demand framework at the heart of the kernel. The key agent-DRE interaction mechanisms are described, which enable complex entity interaction through the use of physics and socio-economic models. The translation of an exchange instance to a variant of the Multicommodity Transportation Problem, which can be solved feasibly or optimally, follows. An extensive investigation of solution performance and fidelity is then presented. Finally, recommendations for future users of Cyclus and the DRE are provided.},
+	school = {University of Wisconsin},
+	author = {Gidden, Matthew J.},
+	month = mar,
+	year = {2015},
+	file = {gidden_agent-based_2015.pdf:/Users/summer/Zotero/storage/TLJXGN7U/gidden_agent-based_2015.pdf:application/pdf;Snapshot:/Users/summer/Zotero/storage/ZTWMYGIL/1.html:text/html},
+}
+
+@article{carlsen_cycamore_2014,
+	title = {Cycamore v1.0.0},
+	url = {http://figshare.com/articles/Cycamore_v1_0_0/1041829},
+	doi = {http://figshare.com/articles/Cycamore_v1_0_0/1041829},
+	abstract = {Additional module for Cyclus, the nuclear fuel cycle simulator developed at the University of Wisconsin - Madison, supporting the modeling of innovative fuel cycles.},
+	urldate = {2014-06-03},
+	journal = {Figshare},
+	author = {Carlsen, Robert W. and Gidden, Matthew and Huff, Kathryn and Opotowsky, Arrielle C. and Rakhimov, Olzhas and Scopatz, Anthony M. and Wilson, Paul},
+	month = jun,
+	year = {2014},
+	note = {http://figshare.com/articles/Cycamore\_v1\_0\_0/1041829},
+	keywords = {Nuclear Fuel Cycle, agent-based simulation},
+	file = {cycamore_1.0.0:/Users/summer/Zotero/storage/W2VGZTDV/Scopatz et al. - 2014 - Cycamore v1.0.0:application/zip;Figshare Download:/Users/summer/Zotero/storage/WQD2B5KA/Scopatz et al. - 2014 - Cycamore v1.0.0:application/zip;Figshare Snapshot:/Users/summer/Zotero/storage/N44XFGRX/Scopatz et al. - 2014 - Cycamore v1.0.0.html:text/html;Full Text (HTML):/Users/summer/Zotero/storage/H56U7DUZ/Scopatz et al. - 2014 - Cycamore v1.0.0.html:text/html},
 }
