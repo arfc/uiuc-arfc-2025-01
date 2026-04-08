@@ -46,8 +46,8 @@
         \caption{Locations of sites storing spent nuclear fuel and reprocessing waste in the United States as of the end of 2022. \cite{carter_spent_2023}}
         \label{fig1}
     \end{figure}
+    \todo{Caption of Figure 1 is not a complete sentence.}
 
-    
     \FloatBarrier
     \begin{table}[H]
         \centering
@@ -193,7 +193,9 @@
     isotopic compositions for every assembly in the U.S. inventory, and that model was then embedded into Cyclus as a reactor archetype
     capable of handling assembly-level variability.\\
     
-    In this work, STANDARDS 5.0.1 provides the modern, expanded equivalent of the UDB used by \textit{Bae et al.}
+    In this work, STANDARDS 5.0.1 provides the modern, expanded equivalent of the UDB
+    \todo{UDB should be written using glossaries.}%
+    used by \textit{Bae et al.}
     The distribution shown in Figure~\ref{fig4} is therefore not merely descriptive: it defines the domain over which isotopic
     vectors are extracted and mapped into Cyclus inventory and \gls{XDS} facility inputs.\\
 
@@ -208,6 +210,7 @@
             \caption{Burnup (GWd/MTHM) and initial enrichment (\% $^{235}U$) distributions for spent nuclear fuel assemblies in the \glspl{LWR} inventory through December 2022 \cite{carter_spent_2023}.}
         \label{fig4}
     \end{figure}
+    \todo{Caption of Figure 4 is not a complete sentence.}
 
     \begin{table}[H]
         \begin{center}
@@ -224,6 +227,7 @@
         \caption{Trends in average annual burnup (GWd/MT) and initial enrichment (\% $^{235}$U) of U.S. \glspl{LWR} spent nuclear fuel assemblies by discharge year. \cite{carter_spent_2023}.}
         \label{fig5}
     \end{figure}
+    \todo{Caption of Figure 5 is not a sentence.}
 
 
     \begin{figure}[H]
@@ -233,8 +237,11 @@
         \caption{Decay heat (W/MT) as a function of cooling time for \gls{PWR} fuel discharged at 60~GWd/MT and cooled for 1~year, including contributions from major radionuclide groups and the total decay heat \cite{carter_spent_2023}.}
         \label{fig6}
     \end{figure}
+    \todo{Caption of Figure 6 is not a complete sentence.}
 
-    Representative burnup cases provide insight into decay heat behavior. 4T4BE46K39R100613These cases include \gls{PWR} fuel discharged at 40 and 60~GWd/MT and \gls{BWR} fuel discharged at 30 and 50~GWd/MT, typical
+    Representative burnup cases provide insight into decay heat behavior. 4T4BE46K39R100613
+    \todo{Are these numbers/letters intentional?}%
+    These cases include \gls{PWR} fuel discharged at 40 and 60~GWd/MT and \gls{BWR} fuel discharged at 30 and 50~GWd/MT, typical
     values bounding the burnup range of modern \gls{LWR} fuel. These representative isotopic compositions are commonly used in fuel
     cycle modeling tools such as \textsc{Cyclus}, ORIGEN, and UNF-ST\&DARDS.\\
 
@@ -263,6 +270,7 @@
         \caption{Decay heat (W/MT) as a function of cooling time for \gls{BWR} fuel discharged at 50~GWd/MT and cooled for 1~year, including contributions from major radionuclide groups and the total decay heat \cite{carter_spent_2023}.}
         \label{fig7}
     \end{figure}
+    \todo{Caption for Figure 7 is not a complete sentence.}
 
     While commercial reactors generate the vast majority of \gls{SNF} in the United States, the \gls{DOE} manages a separate and highly diverse
     inventory originating from research, defense, and demonstration reactors, which is discussed in the following section.
@@ -280,13 +288,17 @@
 
     Unlike the relatively standardized commercial \gls{LWR} inventory, \gls{DOE}'s \gls{SNF} inventory is highly heterogeneous.
     It includes fuel from graphite moderated reactors, sodium cooled reactors, high flux isotope production reactors,
-    heavy water reactors, TRIGA research reactors, breeder reactors, and early prototype power reactors. Fuel enrichments
+    heavy water reactors, TRIGA 
+    \todo{TRIGA should be written using glossaries}%
+    research reactors, breeder reactors, and early prototype power reactors. Fuel enrichments
     span a wide range from depleted uranium for production reactors to highly enriched uranium exceeding 93\% $^{235}U$ for
     test and training reactors. Many reactors used bespoke fuel element geometries and materials, resulting in over 229,000
     individual fuel elements or pieces, covering several hundred unique fuel types. This diversity is central to \gls{DOE}'s ongoing
     challenges in characterization, consolidation, and long term disposal planning.\\
 
-     By the end of 2022, \gls{DOE} managed approximately 2,446~MTHM of \gls{SNF} (excluding naval fuel), as documented in the GC-859 database.
+     By the end of 2022, \gls{DOE} managed approximately 2,446~MTHM
+     \todo{MTHM should be written using glossaries}%
+     of \gls{SNF} (excluding naval fuel), as documented in the GC-859 database.
      Radionuclide inventories for \gls{DOE}-managed fuel are estimated through template depletion models that represent typical fuel
     behavior at different burnups and cooling times. These templates are then scaled to match the mass, enrichment, and operating
     history of individual \gls{SNF} records. Based on these models, the total 
@@ -311,19 +323,29 @@
         \vspace{0.3em}
         \footnotesize
         \textit{Table note:}
-        \textsuperscript{11} Canister counts are derived from an SFD loading algorithm and have been rounded up to whole canisters. They provide a relative comparison across decay-heat ranges and do not represent actual as-loaded canisters. Totals may therefore differ from the SFD database, and cumulative percentages are based on the algorithm results.
+        \textsuperscript{11} Canister counts are derived from an SFD
+	    \todo{SFD needs to be written using glossaries.}%
+	    loading algorithm and have been rounded up to whole canisters. They provide a relative comparison across decay-heat ranges and do not represent actual as-loaded canisters. Totals may therefore differ from the SFD 
+	    \todo{SFD needs to be written using glossaries}%
+	    database, and cumulative percentages are based on the algorithm results.
         \normalsize
     \end{table}
 
     In 1995, \gls{DOE} made the strategic decision to consolidate \gls{SNF} storage at three primary sites: the Hanford Site in Washington,
     Idaho National Laboratory (INL) in Idaho, and the Savannah River Site (SRS) in South Carolina. These locations now host nearly
-    all \gls{DOE}-managed \gls{SNF}. Hanford contains the largest share, approximately 2,128~MTHM, primarily stored in sealed stainless steel
+    all \gls{DOE}-managed \gls{SNF}. Hanford contains the largest share, approximately 2,128~MTHM
+    \todo{MTHM should be written using glossaries}%
+    , primarily stored in sealed stainless steel
     Multi-Canister Overpacks (MCOs). \gls{INL} stores approximately 270~MTHM, much of it originating from research and test reactors.
-    \gls{SRS} holds approximately 27~MTHM, largely from isotope production reactors and research reactor returns. Although \gls{DOE} has
+    \gls{SRS} holds approximately 27~MTHM
+    \todo{MTHM should be written using glossaries}%
+    , largely from isotope production reactors and research reactor returns. Although \gls{DOE} has
     established standard disposal canister designs intended to support eventual geologic disposal, no \gls{DOE} \gls{SNF} has yet been packaged
     into these standardized canisters\cite{arthur_accelerator-based_1995}\\
 
-    \gls{DOE} also manages approximately 173.6~MTHM of spent nuclear fuel that originated from commercial nuclear power reactors,
+    \gls{DOE} also manages approximately 173.6~MTHM
+    \todo{MTHM should be written using glossaries.}%
+    of spent nuclear fuel that originated from commercial nuclear power reactors,
     but was transferred to \gls{DOE} for research, testing, and fuel cycle demonstration activities. This inventory includes core debris
     from Three Mile Island Unit~2, high-temperature gas-cooled reactor fuel from the Fort St.~Vrain reactor, and various \gls{LWR} assemblies
     used in post-irradiation examination, rod consolidation experiments, and vitrification studies. Much of this fuel is no longer in intact
@@ -334,7 +356,9 @@
     Program. This fuel is discharged from nuclear powered submarines, aircraft carriers, land based prototype reactors,
     and moored training ships. Naval fuel is fabricated with highly enriched uranium, resulting in exceptionally low transuranic
     production compared to commercial \gls{LWR} fuel. The current inventory is approximately 40~MTHM, with projections indicating less
-    than 65~MTHM by 2035.
+    than 65~MTHM 
+    \todo{MTHM should be written using glossaries}%
+    by 2035.
 
     \begin{table}[H]
         \begin{center}
@@ -373,7 +397,9 @@
 
     Beyond commercial nuclear power reactors and \gls{DOE} facilities, a small amount of \gls{SNF} is located at
     other sites throughout the United States. These holdings are comparatively minor totaling only about 1.35~metric tons of
-    heavy metal (MTHM), yet they represent a diverse set of institutions and reactor types that contribute to the broader national
+    heavy metal (MTHM)
+    \todo{Here MTHM is defined for the first time, but it is used many times before this instance. Either define sooner, or no need to redefine here}%
+    , yet they represent a diverse set of institutions and reactor types that contribute to the broader national
     fuel cycle inventory. The \gls{SNF} at these locations is cataloged in the \gls{DOE} Spent Fuel Database and originates primarily from
     university research reactors, government agency operated reactors, and commercial research and development centers.\\
 
@@ -385,7 +411,8 @@
     it is transferred to \gls{DOE} custody, most commonly to the \gls{INL} or 
     the \gls{SRS}, where
     it becomes part of the broader \gls{DOE}-managed \gls{SNF} inventory discussed earlier. A small number of specialized critical facilities,
-    such as the AGN, 201 reactors or the Rensselaer Polytechnic Institute Critical Facility, operate at such low power that they are
+    such as the AGN, 201 \todo{AGN, 201 should be AGN-201}%
+    reactors or the Rensselaer Polytechnic Institute Critical Facility, operate at such low power that they are
     not expected to generate any spent fuel for discharge.\\
 
     Table~\ref{tab9} provides a listing of the university reactors and the quantities of spent nuclear fuel at those locations.
@@ -620,8 +647,9 @@
     changes in isotopic composition, and key performance metrics such as minor actinide destruction rate, energy production,
     and waste radiotoxicity reduction. The combination of these two modules one representing the national inventory and
     the other representing consumption pathways enables system level evaluation of how \gls{ADS} deployment scales, how many
-    units are needed to achieve specific waste reduction goals, and how quickly the inventory could be transmuted under
-    different scenarios\cite{herrera-martinez_transmutation_2007}.\\
+    units are needed to achieve specific waste reduction goals, and how quickly the inventory could be transmuted under different scenarios\cite{herrera-martinez_transmutation_2007}.
+    \todo{Explanation of XDS system design does not cite Wisconsin design.}
+
 
     \begin{figure}[H]
     \centering
@@ -674,6 +702,7 @@
     }
     \caption{Structure of the \gls{XDS} facility archetype within the Cyclus framework, showing the input material feed and the resulting output commodity streams for residual actinides, LLFPs, and other fission products, along with the waste stream.}
     \end{figure}
+    \todo{Figure caption is not a complete sentence.}
 
 
 \subsection{Simulation architecture in \textsc{Cyclus}}
@@ -787,13 +816,21 @@ Blue facilities denote proposed facilities for this work, while pink facilities 
     For scenarios focused strictly on minor actinide (MA) reduction, the feed consists of the isotopes that dominate long term radiotoxicity, decay heat,
     and neutron absorption in the commercial \gls{SNF} inventory: uranium ($^{235}U$, $^{238}U$), plutonium ($^{238}Pu$ through $^{242}Pu$), neptunium-237,
     americium ($^{241}Am$, $^{242m}Am$, $^{243}Am$), and curium ($^{244}Cm$ through $^{247}Cm$). Plutonium isotopes are included to maintain the subcritical multiplication
-    factor of the \gls{XDS}, while the MA vector represents the primary target for transmutation. In some \gls{XDS}s designs, technetium-99 and iodine-129 are
+    factor of the \gls{XDS}, while the MA 
+    \todo{MA should be written using glossaries}%
+    vector represents the primary target for transmutation. In some \gls{XDS}s designs, technetium-99 and iodine-129 are
     also incorporated in the feed because of their strong spectral-shaping effects.~\cite{gohar_ads_2021}\\
 
     A second, extended feed stream is used for \gls{XDS} concepts that aim to simultaneously transmute long lived fission products (LLFPs) alongside actinides.
-    In this scenario the MA composition described above is supplemented with selected LLFP isotopes that significantly influence long term radiotoxicity or
+    In this scenario the MA 
+    \todo{MA should be written using glossaries.}%
+    composition described above is supplemented with selected LLFP 
+    \todo{LLFP should be written using glossaries}%
+    isotopes that significantly influence long term radiotoxicity or
     neutron economy, including $^{99}Tc$, $^{129}I$, $^{135}Cs$, $^{79}Se$, $^{126}Sn$, $^{93}Zr$, $^{107}Pd$, $^{85}Kr$, and $^{151}Sm$.
-    These LLFPs are incorporated only when the system design explicitly targets LLFP destruction;
+    These LLFPs are incorporated only when the system design explicitly targets LLFP 
+    \todo{Both instances of LLFP should be written using glossaries}%
+    destruction;
     otherwise they appear solely as fission products generated during irradiation.
     Together, the MA-only and MA+LLFP feed definitions allow \textsc{Cyclus} to represent a spectrum of \gls{XDS} concepts ranging from conservative
     actinide burner designs to more aggressive, waste reduction strategies. For molten-salt-based \gls{XDS} systems,
@@ -804,7 +841,9 @@ Blue facilities denote proposed facilities for this work, while pink facilities 
     that occur during transmutation. Following irradiation, the material contains reduced quantities of minor actinides, particularly $^{241}Am$, $^{243}Am$, $^{237}Np$,
     and multiple curium isotopes, which reflects the primary transmutation objective of the system.
     The plutonium vector evolves through a combination of fission and neutron capture reactions, typically showing reduced $^{239}Pu$ and $^{241}Pu$, and corresponding growth in $^{240}Pu$ and $^{242}Pu$.
-    When LLFP transmutation is not activated in the scenario, long lived isotopes such as $^{99}Tc$, $^{129}I$, $^{126}Sn$, and $^{107}Pd$ remain in the output inventory.
+    When LLFP 
+    \todo{LLFP should be written uisng glossaries}%
+    transmutation is not activated in the scenario, long lived isotopes such as $^{99}Tc$, $^{129}I$, $^{126}Sn$, and $^{107}Pd$ remain in the output inventory.
     Overall, the resulting composition demonstrates substantial actinide mass reduction, increased fission product content, and a modified transuranic vector,
     providing a physically realistic representation of \gls{XDS} discharge material for further processing, storage, or reinsertion into subsequent fuel cycle stages\cite{wagner_categorization_2013}.
 
